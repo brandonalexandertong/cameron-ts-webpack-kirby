@@ -1,0 +1,14 @@
+title: Background Images
+
+
+options:
+  changeStatus: false
+
+
+sections:
+  images:
+    type: files
+    template: background
+    layout: cards
+    min: 10
+    max: 10

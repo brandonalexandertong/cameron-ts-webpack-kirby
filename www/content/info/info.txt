@@ -1,0 +1,50 @@
+Title: Info
+
+----
+
+About: Cameron Tidball-Sciullo is a photographer & director based in New York. He is  1/2 of creative partnership 91 Rules.
+
+----
+
+Workscol1:
+
+- 
+  project: peppe
+- 
+  project: asdfasdf
+- 
+  project: dsadfsdfa
+- 
+  project: asdfadsfa
+- 
+  project: fdasfd
+- 
+  project: fsdafdfas
+
+----
+
+Email: jtruax303@gmail.com
+
+----
+
+Phone: 7202883339
+
+----
+
+Social:
+
+- 
+  platform: Facebook
+  url: https://facebook.com
+- 
+  platform: instagram
+  url: ""
+
+----
+
+Workscol2:
+
+- 
+  project: dfads
+- 
+  project: fdafdsa

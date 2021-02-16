@@ -9,7 +9,15 @@ const path = require('path')
  */
 const entries = {
   'src/index.js': 'www/assets/builds/bundle.js',
-  'src/index.scss': 'www/assets/builds/bundle.css'
+  'src/background.js': 'www/assets/builds/bundle.js',
+  'src/vertical-scroll.js': 'www/assets/builds/bundle.js',
+  'src/cursor.js': 'www/assets/builds/bundle.js',
+  'src/album-array.js': 'www/assets/builds/bundle.js',
+  'src/vimeo.js': 'www/assets/builds/bundle.js',
+  'src/utils.js': 'www/assets/builds/bundle.js',
+  'src/vimeo-loader.js': 'www/assets/builds/bundle.js',
+  'src/index.scss': 'www/assets/builds/bundle.css',
+  'src/base.scss': 'www/assets/builds/bundle.css'
 }
 
 /**
