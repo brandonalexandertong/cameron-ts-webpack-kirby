@@ -93,13 +93,9 @@
       </div>
     </div>
   </section>
-
-  <section class="projects-section">
-
-
-
+  
+  <section class="projects-section"> 
     <div class="projects-container off-screen">
-
       <?php if ($projects = page('projects')): ?>
         <?php if ($albums = $projects->children()->listed()->filterBy('template', 'album'))?>
         <?php foreach ($projects->children()->listed() as $project): ?>
@@ -119,19 +115,19 @@
                 <?php endif ?>
 
                 <?php foreach ($project->images() as $picture): ?>
-                 <img class="visible-image" loading="lazy" src = "<?= $picture->resize(1000,1000)->url() ?>">
+                 <img class="visible-image" width="<?= $picture->resize(1000,1000)->width() ?>" height="<?= $picture->resize(1000,1000)->height() ?>" loading="lazy" src = "<?= $picture->resize(1000,1000)->url() ?>">
                 <?php endforeach ?>
                 <?php if ($firstPicture = $project->image()): ?>
-                  <img class="blurred-image" src = "<?= $firstPicture->resize(2000,2000)->url() ?>">
+                  <img class="blurred-image"  width="xx" height="xxx" src = "<?= $firstPicture->resize(2000,2000)->url() ?>">
                 <?php endif ?>
               </div>
           <?php else: ?>
-            <!-- <iframe class="video project"src="https://player.vimeo.com/video/<?= $project->vimeoId() ?>" width="640" height="468" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
             <div class="o-ratio-16-9 project video">
                 <div class="vimeo-player" id ="test-video-id" data-vimeo="<?= $project->vimeoId() ?>" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+                    <div class = "scroll-cover"></div>
                     <div class="vimeo-player__ui">
-                        <button class="vimeo-player__play">Play</button>
-                        <button class="vimeo-player__pause">Pause</button>
+                        <button class="vimeo-player__play">PLAY</button>
+                        <button class="vimeo-player__pause">PAUSE</button>
                         <div class="vimeo-player__seek">0:00</div>
                         <button class="vimeo-player__mute icon">
                             <img src="assets/icons/volume.png" alt="Mute">

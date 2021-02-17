@@ -6,19 +6,22 @@ import {
 class Vimeo {
   constructor({
     id, element, options = {
-      autoplay: true,
-      muted: false,
+      autoplay: false,
+      muted: true,
       loop: true,
       controls: false,
-    },
+    }
   }) {
     this.id = id
     this.el = element
+
     this.isMuted = false
     this.isInit = false
     this.isPlaying = false
     this.isLoaded = false
     this.isFullscreen = false
+
+    console.log(id, element)
 
     if (!this.id || !this.el) {
       console.warn('Missing required arguements, abording Vimeo initializer') // eslint-disable-line
@@ -38,6 +41,14 @@ class Vimeo {
     this.init()
   }
 
+  ioCallback(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log('is visible', entry.isIntersecting, this.el)
+      }
+    })
+  }
+
   async init() {
     this.playBtn = this.el.querySelector('.vimeo-player__play')
     this.pauseBtn = this.el.querySelector('.vimeo-player__pause')
@@ -50,9 +61,10 @@ class Vimeo {
     if (this.isMuted === false) this.mute.classList.add('active')
 
     try {
+      console.log(this.options)
       this.player = new Player(this.el, {
         id: this.id,
-        width: 640,
+        height: 610,
         ...this.options,
       })
       this.isInit = true
@@ -60,6 +72,35 @@ class Vimeo {
     } catch (error) {
       throw new Error(`Init vimeo – ${error}`)
     }
+
+    // this.observer = new IntersectionObserver(this.ioCallback.bind(this), {})
+    // this.observer.observe(this.el)
+
+    // if (!!window.IntersectionObserver) {
+
+    //   let observer = new IntersectionObserver((entries, observer) => {
+    //     entries.forEach(entry => {
+    //       // if (entry.intersectionRatio =/= 1 && !this.isPlaying) {
+
+    //       console.log(entry.isIntersecting,  entry.intersectionRatio )
+    //       // console.log(entry.intersectionRatio)
+    //       // if (entry.intersectionRatio <= 0.5) {
+    //       //   console.log(this.el,'not visible anymore')
+          
+    //       // }
+    //       // if (entry.intersectionRatio > 0.5) {
+    //       //   console.log(this.el,'is now visible')
+          
+    //       // }
+         
+
+    //     })
+    //   }, { threshold: 1 })
+
+    //   observer.observe(this.el);
+    // }
+
+
 
     try {
       const loadEvent = this.options.autoplay === true ? 'playing' : 'loaded'
@@ -93,7 +134,7 @@ class Vimeo {
           if (fullscreen === false) {
             this.maximize.classList.add('active')
             this.previous = document.onkeydown
-            document.onkeydown = () => {}
+            document.onkeydown = () => { }
           }
           if (fullscreen === true) {
             this.maximize.classList.remove('active')
@@ -163,7 +204,7 @@ class Vimeo {
     this.isFullscreen = true
     this.maximize.classList.add('active')
     this.previous = document.onkeydown
-    document.onkeydown = () => {}
+    document.onkeydown = () => { }
   }
 
   leaveFullscreen() {

@@ -1,3 +1,5 @@
+@import "./scss/projects";
+
 album* {
   margin: 0;
 }
@@ -29,6 +31,10 @@ html {
   font-family: var(--font-family-sans);
   color: var(--color-text);
   background: var(--color-background);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  overscroll-behavior-x: none;
 }
 /* img {
   width: 100%;
@@ -47,7 +53,11 @@ body {
   line-height: 95%;
   text-transform: uppercase;
   color: #000000;
+  height: 100vh;
+  width: 100vw;
+  overscroll-behavior-x: none;
 }
+
 li {
   list-style: none;
 }
@@ -126,8 +136,59 @@ small {
   overflow-x: scroll;
   white-space: nowrap;
   scrollbar-width: none;  /* Firefox */
-  transition: transform .5s ease-in;
+  transition: transform .7s ease-in;
+  // display: flex;
+  // flex-wrap: nowrap;
   padding: 22px 0;
+}
+
+.album img {
+  position: relative;
+  // max-width: unset;
+  height: 610px;
+  object-fit: cover;
+  // remove
+  z-index: -1;
+  display: none;
+  border-radius: 10px;
+  width: auto;
+}
+
+.album .blurred-image {
+  filter: blur(2px);
+  position: absolute;
+  top: 0;
+  display: block;
+  z-index: -2;
+}
+
+
+.prev {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  z-index: 2;
+  cursor: none;
+}
+
+.next {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  cursor: none;
+}
+
+.project {
+  display: inline-block;
+  margin: 0 16px 0 0;
+  position: relative;
+}
+
+
+.project:hover {
+  z-index: 1;
 }
 
 .off-screen {
@@ -167,56 +228,7 @@ small {
   flex-shrink: 0;
 }
 
-.album img {
-  position: relative;
-  /* max-width: 100%; */
-  height: 85vh;
-  object-fit: cover;
-  z-index: -1;
-  display: none;
-  border-radius: 10px;
-}
 
-.album .blurred-image {
-  filter: blur(2px);
-  position: absolute;
-  top: 0;
-  display: block;
-  z-index: -2;
-}
-
-
-.prev {
-  height: 100%;
-  width: 50%;
-  position: absolute;
-  z-index: 2;
-  cursor: none;
-}
-
-.next {
-  height: 100%;
-  width: 50%;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  cursor: none;
-}
-
-.album {
-
-}
-
-.project {
-  display: inline-block;
-  margin: 0 16px 0 0;
-  position: relative;
-}
-
-
-.project:hover {
-  z-index: 1;
-}
 
 
 .info-tag {

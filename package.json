@@ -64,7 +64,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.13",
-    "@vimeo/player": "^2.15.0"
+    "@vimeo/player": "^2.15.0",
+    "normalize-wheel": "^1.0.1"
   },
   "browserslist": [
     "defaults"
