@@ -38,7 +38,7 @@
     <?php if ($backgroundPage = page('background')): ?>
       <?php foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage): ?>
         <div class="bg-img-div">
-          <img class="bg-img" loading="lazy" src="<?= $bgimage->resize(2000,2000)->url() ?>">
+          <img class="bg-img lazyload" loading="lazy" srcset="<?= $bgimage->resize(2000,2000)->url() ?>">
         </div>
       <?php endforeach ?>
     <?php endif ?>
@@ -115,10 +115,10 @@
                 <?php endif ?>
 
                 <?php foreach ($project->images() as $picture): ?>
-                 <img class="visible-image" width="<?= $picture->resize(1000,1000)->width() ?>" height="<?= $picture->resize(1000,1000)->height() ?>" loading="lazy" src = "<?= $picture->resize(1000,1000)->url() ?>">
+                  <img class="visible-image lazyload" width="<?= $picture->resize(1000,1000)->width() ?>" height="<?= $picture->resize(1000,1000)->height() ?>" loading="lazy" data-src = "<?= $picture->resize(1000,1000)->url() ?>">
                 <?php endforeach ?>
                 <?php if ($firstPicture = $project->image()): ?>
-                  <img class="blurred-image"  width="xx" height="xxx" src = "<?= $firstPicture->resize(2000,2000)->url() ?>">
+                  <img class="blurred-image"  width="<?= $picture->resize(400,400)->width() ?>" height="<?= $picture->resize(400,400)->height() ?>" src = "<?= $firstPicture->resize(400,400)->url() ?>">
                 <?php endif ?>
               </div>
           <?php else: ?>

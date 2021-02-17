@@ -1,0 +1,96 @@
+.info-hero-section {
+    max-width: 98vw;
+    margin: 8px auto 0 auto;
+
+    .info-container {
+        background-color: var(--color-white);
+        height: 140px;
+        z-index: 3;
+        border-radius: 43px;
+        border: var(--color-black) .94px solid;
+        position: relative;
+        z-index: 5;
+
+        .info-section {
+            height: 100%;
+            background-color: var(--color-white);
+            margin: 0 42px;
+            display: grid;
+            grid-template-columns: fit-content(24px) fit-content(282px) 185px fit-content(90px) fit-content(280px) 52px fit-content(24px) fit-content(48px) auto fit-content(24px);
+            grid-template-rows: 13px auto;
+            grid-column-gap: 16px;
+
+            .info-content {
+                grid-row: 2;
+            }
+
+            .about-copy {
+                grid-column: 2;
+            }
+
+            .selected-works-tag {
+                grid-column: 4;
+            }
+
+            .selected-works-container {
+                grid-column: 5;
+
+                .selected-works {
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-template-rows: repeat(8, auto);
+                    max-height: 140px;
+
+                    li {
+                        padding-right: 32px;
+                    }
+                }
+            }
+
+            .contact-tag {
+                grid-column: 7;
+            }
+
+            .contact-list {
+                grid-column: 8;
+            }
+
+            .close-tag {
+                grid-column: 10;
+                text-align: right;
+                cursor: var(--cursor-type);
+            }
+              
+        }
+    }
+
+    .hero-container {
+        margin: 8px 0 0 0;
+        position: relative;
+
+        .hero img {
+            max-width: 100%;
+        }
+
+        .info-tag {
+            width: 4%;
+            position: absolute;
+            top: 0;
+            left: 22.8%;
+            z-index: 5;
+            cursor: var(--cursor-type);
+        }
+    } 
+}
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+
+      

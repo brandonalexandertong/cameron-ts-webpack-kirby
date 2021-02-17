@@ -29,50 +29,32 @@
 // }
 
 // verticalScroll()
+import throttle from 'lodash/throttle'
 
 const projectsContainer = document.querySelector('.projects-container')
-const videoScroll = document.querySelector('.o-ratio-16-9')
 
 function verticalScroll () {
-  projectsContainer.addEventListener('wheel', function (event) {
-    if (event.deltaY < 0) {
+  projectsContainer.addEventListener('wheel', function (eventO) {
+    if (eventO.deltaY < 0 && !projectsContainer.classList.contains('off-screen')) {
       projectsContainer.scrollLeft += 30
-    } else if (event.deltaY > 0) {
-      projectsContainer.scrollLeft -= 30
-    }
-  })
-  videoScroll.addEventListener('wheel', function (event) {
-    if (event.deltaY < 0) {
-      projectsContainer.scrollLeft += 30
-    } else if (event.deltaY > 0) {
+    } else if (eventO.deltaY > 0 && !projectsContainer.classList.contains('off-screen')) {
       projectsContainer.scrollLeft -= 30
     }
   })
 }
 
-document.addEventListener('wheel', function (event) {
+document.addEventListener('wheel', throttle(function (event) {
   if (event.deltaY < 0) {
     projectsContainer.classList.remove('off-screen')
+    projectsContainer.addEventListener('transitionend', function () {
+      console.log('How much transition')
+      setTimeout(function() {
+        verticalScroll()
+      }, 1000)
+      const bgImages = document.querySelectorAll('.bg-img')
+      bgImages.forEach(image => {
+        image.classList.add('blur-background')
+      })
+    })
   }
-})
-
-verticalScroll()
-
-// projectsContainer.addEventListener('wheel', function (event) {
-//   /* downward */
-//   if (event.deltaY < 0) {
-//     console.log('upward')
-//     translationX -= 70
-//     translationX = clamp(-1 * pixelTreshold, 0, translationX)
-//     projectsContainer.style.transform = `translateX(${translationX}px)`
-//     console.log(translationX)
-
-//     /* upward */
-//   } else if (event.deltaY > 0) {
-//     console.log('downward')
-//     translationX += 70
-//     translationX = clamp(-1 * pixelTreshold, 0, translationX)
-//     projectsContainer.style.transform = `translateX(${translationX}px)`
-//     console.log(translationX)
-//   }
-// })
+}, 3000))

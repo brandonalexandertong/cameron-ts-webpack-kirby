@@ -1,0 +1,72 @@
+.vimeo-player {
+
+    width: auto;
+    align-items: stretch;
+
+    &__ui, &__progress {
+        position: absolute;
+        bottom: 32px;
+        left: 50%; 
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    &__ui {
+        display: flex;
+    }
+
+    &__progress {
+        --progress: 0;
+        bottom: 18px;
+        z-index: 10;
+        cursor: var(--cursor-type);
+        height: 1px;
+        width: 95%;
+    }
+
+    &__progress::before {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 100%;
+        height: 1px;
+        content: "";
+        background-color: white;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+
+    &__progress::after {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: calc(var(--progress)*100%);
+        height: 2px;
+        content: "";
+        background-color: white;
+        transform: translateY(-50%);
+        z-index: 15;
+        transition: width .1s linear;
+    }
+
+    button, &__seek {
+        margin: 0 6px;
+        padding: 0;
+        cursor: var(--cursor-type);
+    }
+
+
+    iframe {
+        max-width: unset;  
+        border-radius: 10px;
+    }
+
+    .scroll-cover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+

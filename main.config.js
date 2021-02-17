@@ -16,6 +16,7 @@ const entries = {
   'src/vimeo.js': 'www/assets/builds/bundle.js',
   'src/utils.js': 'www/assets/builds/bundle.js',
   'src/vimeo-loader.js': 'www/assets/builds/bundle.js',
+  'src/lazy-load.js': 'www/assets/builds/bundle.js',
   'src/index.scss': 'www/assets/builds/bundle.css',
   'src/base.scss': 'www/assets/builds/bundle.css'
 }

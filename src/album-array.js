@@ -1,7 +1,6 @@
 // album arrays
 
 const projects = document.querySelectorAll('.project')
-const albums = document.querySelectorAll('.album')
 const projectsAmount = projects.length
 const slideIndex = new Array(projectsAmount).fill(1)
 
@@ -11,6 +10,7 @@ function plusSlides (n, no) {
 
   if (n == -1 && slideIndex[no] > 1) {
     x[slideIndex[no] - 2].setAttribute('loading', 'eager')
+    x[slideIndex[no] - 2].classList.add('lazypreload')
   }
 }
 
@@ -26,16 +26,16 @@ function showSlides (n, no) {
     }
     if (slideIndex[no] < x.length) {
       x[slideIndex[no]].setAttribute('loading', 'eager')
+      x[slideIndex[no]].classList.add('lazypreload')
     }
-    // if (slideIndex[no] > 1) {
-    //   x[slideIndex[no]-1].setAttribute('loading', 'eager')
-    // }
     for (i = 0; i < x.length; i++) {
       x[i].style.display = 'none'
     }
     x[slideIndex[no] - 1].style.display = 'block'
     x[slideIndex[no] - 1].setAttribute('loading', 'eager')
+    x[slideIndex[no] - 1].classList.add('lazypreload')
     x[x.length - 1].setAttribute('loading', 'eager')
+    x[x.length - 1].classList.add('lazypreload')
   }
 }
 

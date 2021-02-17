@@ -7,13 +7,16 @@ function addSelected (array) {
   let k = 2
   array[i].classList.add('selected')
   array[i].setAttribute('loading', 'eager')
+  array[i].classList.add('lazypreload')
 
   array[j].classList.add('load')
   array[j].setAttribute('loading', 'eager')
+  array[j].classList.add('lazypreload')
 
   setInterval(function () {
     array[k].classList.add('load')
     array[k].setAttribute('loading', 'eager')
+    array[k].classList.add('lazypreload')
     array[i].classList.remove('selected')
     // array[i - 1].classList.remove('selected')
     array[j].classList.remove('load')
@@ -21,7 +24,7 @@ function addSelected (array) {
     i = (i + 1) % array.length
     j = (j + 1) % array.length
     k = (k + 1) % array.length
-  }, 3000)
+  }, 5000)
 }
 
 addSelected(bgImageArray)

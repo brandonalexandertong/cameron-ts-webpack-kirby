@@ -1,0 +1,50 @@
+:root {
+    --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+html {
+    font-family: var(--font-family-sans);
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 95%;
+    text-transform: uppercase;
+  }
+
+  
+h3 {
+    font-size: 10px;
+    text-transform: capitalize;
+    color: var(--color-text);
+    font-weight: normal;
+    padding: 0;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    color: currentColor;
+}
+
+.cursor {
+    line-height: 1;
+    font-size: 23px;
+}
+
+.selected-works li {
+    line-height: 110.5%;
+}
+
+.contact-list li {
+    text-decoration: underline;
+    line-height: 123%;
+}
+
+.info-tag {
+    line-height: 0;
+}

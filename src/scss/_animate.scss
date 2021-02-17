@@ -1,0 +1,27 @@
+.info-hero-section {
+    transition: transform .5s ease;
+  }
+  
+.slide-up {
+    transform: translateY(-150px);
+  }
+
+.projects-container {
+    transition: transform .7s ease-in;
+}
+
+.off-screen {
+    transform: translateX(100%);
+  }
+
+.project:hover {
+    z-index: 1;
+}
+
+.blur-background {
+  filter: blur(3px);
+}
+
+.bg-img {
+  transition: filter 1s ease-in;
+}

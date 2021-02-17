@@ -3,6 +3,8 @@ import {
   launchIntoFullscreen, exitFullscreen, iOS, isSafariDesktop,
 } from './utils'
 
+const viewportHeight = window.innerHeight
+const viewportHeightScaled = viewportHeight * 0.85
 class Vimeo {
   constructor({
     id, element, options = {
@@ -64,7 +66,7 @@ class Vimeo {
       console.log(this.options)
       this.player = new Player(this.el, {
         id: this.id,
-        height: 610,
+        height: viewportHeightScaled,
         ...this.options,
       })
       this.isInit = true

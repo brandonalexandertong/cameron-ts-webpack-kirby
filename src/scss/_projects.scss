@@ -1,92 +1,65 @@
-// .project {
-//     height: 85vh;
-// }
+:root {
+    --project-height: 85vh;
+    --blur-amount: 4px;
+}
 
-.vimeo-player {
+.projects-section {
+    position: absolute;
+    bottom: 0;
+    left: 1vw;
 
-    width: auto;
-    align-items: stretch;
+    .projects-container {
+        overflow-x: scroll;
+        white-space: nowrap;
+        scrollbar-width: none;  /* Firefox */
+        // display: flex;
+        // flex-wrap: nowrap;
+        padding: 22px 0;
 
-    &__ui, &__progress {
-        position: absolute;
-        display: flex;
-        bottom: 32px;
-        left: 50%; 
-        transform: translateX(-50%);
-        align-items: center;
-        justify-content: center;
-        color: white;
-        width: 300px;
+        .project {
+            display: inline-block;
+            margin: 0 16px 0 0;
+            position: relative;
+
+            .prev {
+                height: 100%;
+                width: 50%;
+                position: absolute;
+                z-index: 2;
+                cursor: none;
+            }
+              
+            .next {
+                height: 100%;
+                width: 50%;
+                position: absolute;
+                right: 0;
+                z-index: 2;
+                cursor: none;
+            }
+        }
+
+        .album img {
+            position: relative;
+            // max-width: unset;
+            height: var(--project-height);
+            object-fit: cover;
+            // remove
+            z-index: -1;
+            display: none;
+            border-radius: 10px;
+            width: auto;
+        }
+          
+          .album .blurred-image {
+            filter: blur(var(--blur-amount));
+            position: absolute;
+            top: 0;
+            display: block;
+            z-index: -2;
+        }      
     }
-
-    button, .vimeo-player__seek {
-        margin: 0 6px;
-        padding: 0;
+    .projects-container::-webkit-scrollbar {
+        display: none;  /* Safari and Chrome */
     }
-
-
-    iframe {
-        max-width: unset;  
-        border-radius: 10px;
-    }
-
-}
-
-
-
-.vimeo-player__progress {
-    --progress: 0;
-    position: absolute;
-    bottom: 18px;
-    z-index: 10;
-    cursor: pointer;
-    height: 1px;
-    width: 95%;
-}
-
-div.vimeo-player__progress::before {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    width: 100%;
-    height: 1px;
-    content: "";
-    background-color: white;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-div.vimeo-player__progress::after {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    width: calc(var(--progress)*100%);
-    height: 2px;
-    content: "";
-    background-color: white;
-    transform: translateY(-50%);
-    z-index: 15;
-    transition: width .1s linear;
-}
-
-.vp-center {
-    background-color: black;
-}
-
-div.vp-video-wrapper {
-    border-radius: 10px;
-}
-
-.player.hide-controls-mode {
-    pointer-events: unset;
-}
-
-.player, .fallback {
-    height: unset;
-}
-
-.scroll-cover {
-    width: 100%;
-    height: 100%;
-    position: absolute;
 }
