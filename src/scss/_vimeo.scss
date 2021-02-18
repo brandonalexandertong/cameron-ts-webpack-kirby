@@ -51,6 +51,20 @@
         transition: width .1s linear;
     }
 
+    &__play.active::before {
+        content: "( ";
+    }
+    &__play.active::after {
+        content: " )";
+    }
+
+    &__pause.active::before {
+        content: "( ";
+    }
+    &__pause.active::after {
+        content: " )";
+    }
+
     button, &__seek {
         margin: 0 6px;
         padding: 0;

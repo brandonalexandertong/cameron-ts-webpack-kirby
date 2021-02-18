@@ -1,4 +1,3 @@
-  </main>
   <?= js([
       'assets/builds/bundle.js'
       // 'assets/js/album-array.js',

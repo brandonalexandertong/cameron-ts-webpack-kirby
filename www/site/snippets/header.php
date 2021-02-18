@@ -8,4 +8,3 @@
   <?= liveCSS('assets/builds/bundle.css') ?>
 </head>
 <body>
-  <main class="main">

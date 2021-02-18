@@ -12,12 +12,12 @@
         overflow-x: scroll;
         white-space: nowrap;
         scrollbar-width: none;  /* Firefox */
-        // display: flex;
-        // flex-wrap: nowrap;
+        display: flex;
+        flex-wrap: nowrap;
         padding: 22px 0;
 
         .project {
-            display: inline-block;
+            // display: inline-block;
             margin: 0 16px 0 0;
             position: relative;
 
@@ -41,9 +41,9 @@
 
         .album img {
             position: relative;
-            // max-width: unset;
+            max-width: unset;
             height: var(--project-height);
-            object-fit: cover;
+            // object-fit: cover;
             // remove
             z-index: -1;
             display: none;
