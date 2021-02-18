@@ -1,7 +1,31 @@
-.vimeo-player {
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
-    width: auto;
-    align-items: stretch;
+.clear {
+    opacity: 0;
+}
+
+
+
+.o-ratio-16-9 {
+    position: relative;
+    height: var(--project-height);
+    width: calc( var(--project-height) * 1.777777777777778 );
+    // background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.vimeo-player {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
 
     &__ui, &__progress {
         position: absolute;
@@ -71,10 +95,15 @@
         cursor: var(--cursor-type);
     }
 
-
     iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         max-width: unset;  
         border-radius: 10px;
+        z-index: -1;
     }
 
     .scroll-cover {

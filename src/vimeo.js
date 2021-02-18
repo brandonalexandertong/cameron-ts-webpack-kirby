@@ -3,8 +3,7 @@ import {
   launchIntoFullscreen, exitFullscreen, iOS, isSafariDesktop,
 } from './utils'
 
-const viewportHeight = window.innerHeight
-const viewportHeightScaled = viewportHeight * 0.85
+
 class Vimeo {
   constructor({
     id, element, options = {
@@ -22,8 +21,6 @@ class Vimeo {
     this.isPlaying = false
     this.isLoaded = false
     this.isFullscreen = false
-
-    console.log(id, element)
 
     if (!this.id || !this.el) {
       console.warn('Missing required arguements, abording Vimeo initializer') // eslint-disable-line
@@ -46,7 +43,7 @@ class Vimeo {
   ioCallback(entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        console.log('is visible', entry.isIntersecting, this.el)
+        // console.log('is visible', entry.isIntersecting, this.el)
       }
     })
   }
@@ -58,15 +55,14 @@ class Vimeo {
     this.seek = this.el.querySelector('.vimeo-player__seek')
     this.progress = this.el.querySelector('.vimeo-player__progress')
     this.maximize = this.el.querySelector('.vimeo-player__maximize')
+    this.loader = this.el.querySelector('.loader')
 
     this.isMuted = this.options.muted
     if (this.isMuted === false) this.mute.classList.add('active')
 
     try {
-      console.log(this.options)
       this.player = new Player(this.el, {
         id: this.id,
-        height: viewportHeightScaled,
         ...this.options,
       })
       this.isInit = true
@@ -106,10 +102,12 @@ class Vimeo {
 
     try {
       const loadEvent = this.options.autoplay === true ? 'playing' : 'loaded'
+
       this.player.on(loadEvent, () => {
         if (this.isLoaded) return
         this.el.classList.add('is-loaded')
         this.isLoaded = true
+        this.loader.classList.add('clear')
       })
 
       this.duration = await this.player.getDuration()
@@ -118,6 +116,7 @@ class Vimeo {
         this.isPlaying = true
         this.playBtn.classList.add('active')
         this.pauseBtn.classList.remove('active')
+        this.loader.classList.add('clear')
         this.trackProgress()
         this.resetHideTimer()
       })
@@ -150,7 +149,10 @@ class Vimeo {
   }
 
   on() {
-    this.playHandler = () => this.play()
+    this.playHandler = () => {
+      this.play()
+      this.loader.classList.remove('clear')
+    }
     this.pauseHandler = this.pause.bind(this)
     this.muteHandler = () => this.toggleMute()
     this.mousemoveHandler = () => {

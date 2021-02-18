@@ -63,27 +63,26 @@
               
         }
     }
-
-    .hero-container {
-        margin: 8px 0 0 0;
-        position: relative;
-
-        .hero img {
-            max-width: 100%;
-        }
-
-        .info-tag {
-            width: 4%;
-            position: absolute;
-            top: 0;
-            left: 22.8%;
-            z-index: 5;
-            cursor: var(--cursor-type);
-        }
-    } 
 }
       
-      
+.hero-tag {
+    max-width: 98%;
+    position: absolute;
+    top: 8px;
+    z-index: 1;
+    left: 1%;
+
+}
+
+.info-tag {
+    width: 4%;
+    position: absolute;
+    top: 12px;
+    left: 22.8%;
+    z-index: 5;
+    cursor: var(--cursor-type);
+}
+    
       
       
     
