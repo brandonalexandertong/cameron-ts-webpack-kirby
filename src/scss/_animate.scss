@@ -26,8 +26,12 @@
   transition: transform .1s;
 }
 
-.blur-background {
+.blurred {
   filter: blur(3px);
+}
+
+.blur-background {
+  filter: blur(200px);
 }
 
 .bg-img {

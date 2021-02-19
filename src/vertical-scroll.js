@@ -110,6 +110,10 @@ function moveOnScreen (event) {
     projectsContainer.classList.remove('off-screen')
     // console.log(event.deltaY)
     // setTimeout(verticalScroll, 1500)
+    const background = document.querySelectorAll('.bg-img')
+    background.forEach(function(image) {
+      image.classList.add('blurred')
+    })
   }
 }
 
