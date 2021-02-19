@@ -21,18 +21,20 @@ album* {
 }
 
 html {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   overscroll-behavior-x: none;
 }
 
 body {
   margin: 0 auto;
+  padding: 0;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overscroll-behavior-x: none;
+  position: relative;
 }
 
 li {

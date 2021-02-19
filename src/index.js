@@ -11,16 +11,18 @@ const infoHeroSection = document.querySelector('.info-hero-section')
 const infoContainer = document.querySelector('.info-container')
 const heroTag = document.querySelector('.hero-tag')
 const closeTag = document.querySelector('.close-tag')
-
+const selectedTag = document.querySelector('.selected-works-tag')
 // adding slide function to info section
 
+const slideFunction = function() {
+  infoHeroSection.classList.toggle('slide-up')
+  heroTag.classList.toggle('slide-down')
+  infoTag.classList.toggle('slide-down')
+  infoContainer.classList.toggle('clear')
+}
+
 const toggleInfo = function (tag) {
-  tag.addEventListener('click', function () {
-    infoHeroSection.classList.toggle('slide-up')
-    heroTag.classList.toggle('slide-down')
-    infoTag.classList.toggle('slide-down')
-    infoContainer.classList.remove('clear')
-  })
+  tag.addEventListener('click', slideFunction)
 }
 
 toggleInfo(infoTag)

@@ -117,3 +117,86 @@
     }
 }
 
+@media (max-width: 600px) {
+    :root {
+        --project-height: 65vh;
+    }
+
+    .projects-section .projects-container {
+        padding: 6vh 0;
+    }
+    .info-tag {
+        bottom: 0px;
+        top: unset;
+        width: 25%;
+        left: 2%;
+        transform: translateY(0px);
+    }
+
+    .hero-tag {
+        position: fixed;
+        top: 2%;
+        transform: translateY(0px);
+    }
+
+    .info-hero-section {
+        display: flex;
+        justify-content: center;
+        top: 10vh;
+        position: relative;
+        .info-container {
+            height: 50vh;
+            border-radius: 30px;
+            width: 95%;
+        
+            .info-section {
+                grid-template-columns: unset;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 30px 8px;
+                height: auto;
+
+                .about-copy {
+                    width: 85%;
+                    margin: 0 0 20px 0;
+                }
+
+                .about-h3, .selected-works-tag, .contact-tag {
+                    width: auto;
+                    margin-right: 16px;
+                }
+
+                .selected-works-container {
+                    width: 70%;
+                    margin: 0 0 20px 0;
+                }
+
+                .close-tag {
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 4;
+                }
+
+                h3 {
+                    font-size: 8px;
+                }
+                p, ul {
+                    font-size: 9px;
+                } 
+
+                .selected-works-container {
+                    .selected-works {
+                        li {
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+                
+        }
+    }
+
+}
+

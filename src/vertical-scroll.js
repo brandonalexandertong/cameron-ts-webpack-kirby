@@ -108,8 +108,6 @@ function moveOnScreen (event) {
   if (event.deltaY < 0) {
     document.removeEventListener('wheel', moveOnScreen, { passive: true })
     projectsContainer.classList.remove('off-screen')
-    // console.log(event.deltaY)
-    // setTimeout(verticalScroll, 1500)
     const background = document.querySelectorAll('.bg-img')
     background.forEach(function(image) {
       image.classList.add('blurred')
@@ -117,4 +115,38 @@ function moveOnScreen (event) {
   }
 }
 
+const mobileMoveOnScreen = function (event) {
+  projectsContainer.classList.remove('off-screen')
+  const background = document.querySelectorAll('.bg-img')
+  background.forEach(function(image) {
+    image.classList.add('blurred')
+  })
+}
+
+let start = null
+
+const touchStartPoint = (e) => {
+  start = e.changedTouches[0]
+}
+
+const touchEndPoint = (e) => {
+  const pixelThreshold = projectsContainer.offsetWidth - window.innerWidth
+  const end = e.changedTouches[0]
+  const difference = end.screenX - start.screenX
+  console.log(difference)
+  if (Math.abs(difference) > 15) {
+    translationX += difference * 3
+    console.log(translationX)
+  }
+  translationX = clamp(-1 * pixelThreshold, 0, translationX)
+  console.log(translationX)
+  projects.forEach(function (project) {
+    project.style.transform = `translateX(${translationX}px)`
+  })
+}
+
+projectsContainer.addEventListener('touchstart', touchStartPoint)
+projectsContainer.addEventListener('touchend', touchEndPoint)
+
 document.addEventListener('wheel', moveOnScreen)
+document.addEventListener('touchmove', mobileMoveOnScreen)

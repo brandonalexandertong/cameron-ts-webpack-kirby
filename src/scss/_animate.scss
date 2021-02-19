@@ -1,6 +1,10 @@
 .info-hero-section, .hero-tag, .info-tag {
     transition: transform .5s ease;
   }
+
+.info-container {
+  transition: opacity .5s ease
+}
   
 .slide-up {
     transform: translateY(-150px);
