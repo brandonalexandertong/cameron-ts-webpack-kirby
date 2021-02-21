@@ -103,11 +103,31 @@
         <?php if ($project->template() == 'album') : ?>
           <div class="album project">
             <?php if ($project->images()->count() > 1) : ?>
-              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `&#8592;<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+
+              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
+                <img src="assets/images/(-white.svg" class="mobile-cursor-parentheses cursor-parentheses-left">
+                <div class="cursor-copy-container">
+                  <p class="cursor-top"></p>
+                  <p class="cursor-bottom"></p>
+                </div>
+                <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
+              </div>
+
+              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `&#8592; <?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
               </div>
               <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?> &#8594;`)" onmouseleave="removeCursor()">
               </div>
             <?php else : ?>
+
+              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
+                <img src="assets/images/(-white.svg" class="mobile-cursor-parentheses cursor-parentheses-left">
+                <div class="cursor-copy-container">
+                  <p class="cursor-top"></p>
+                  <p class="cursor-bottom"></p>
+                </div>
+                <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
+              </div>
+              
               <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
               </div>
               <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">

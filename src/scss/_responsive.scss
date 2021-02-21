@@ -122,11 +122,24 @@
         --project-height: 65vh;
     }
 
-    .projects-section .projects-container {
-        padding: 6vh 0;
+    .cursor {
+        display: none !important;
+    }
+
+    .mobile-cursor {
+        display: flex;
+    }
+
+    .projects-section {
+    position: unset;
+    margin: -45vh 8px 0 8px;
+        .projects-container {
+            padding: 6vh 0;
+            overflow-x: scroll;
+        }
     }
     .info-tag {
-        bottom: 0px;
+        bottom: 9px;
         top: unset;
         width: 25%;
         left: 2%;

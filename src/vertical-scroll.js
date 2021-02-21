@@ -145,8 +145,8 @@ const touchEndPoint = (e) => {
   })
 }
 
-projectsContainer.addEventListener('touchstart', touchStartPoint)
-projectsContainer.addEventListener('touchend', touchEndPoint)
+// projectsContainer.addEventListener('touchstart', touchStartPoint)
+// projectsContainer.addEventListener('touchend', touchEndPoint)
 
 document.addEventListener('wheel', moveOnScreen)
 document.addEventListener('touchmove', mobileMoveOnScreen)

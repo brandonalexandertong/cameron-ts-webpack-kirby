@@ -40,7 +40,10 @@
                 cursor: none;
             }
         }
-
+        
+        .album img.mobile-cursor-parentheses {
+            display: block;
+        }
         .album img {
             position: relative;
             max-width: unset;
