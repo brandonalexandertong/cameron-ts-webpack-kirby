@@ -30,7 +30,11 @@
   <img src="assets/images/(.svg" class="cursor-parentheses cursor-parentheses-left">
   <div class="cursor-copy-container">
     <p class="cursor-top"></p>
-    <p class="cursor-bottom"></p>
+    <div class = "cursor-bottom-row">
+      <img class = "left-arrow" src="assets/icons/Cam_Arrow_Black_left.png">
+      <p class="cursor-bottom"></p>
+      <img class = "right-arrow" src="assets/icons/Cam_Arrow_Black_Right.png">
+    </div>  
   </div>
   <img src="assets/images/).svg" class="cursor-parentheses cursor-parentheses-right">
 </div>
@@ -86,8 +90,8 @@
   </div>
 </section>
 
-<img class="hero-tag" src="assets/logos/Title_CJ-TS.svg">
-
+<img class="hero-tag tidball-tag-desktop" src="assets/logos/Cameron.svg">
+<img class="hero-tag tidball-tag-mobile" src="assets/logos/tidball-sciullo-mobile.svg">
 <img class="info-tag" src="assets/logos/Info_CJ-TS.svg">
 
   
@@ -113,9 +117,9 @@
                 <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
               </div>
 
-              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `&#8592; <?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeRight()" onmouseleave="removeCursor()">
               </div>
-              <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?> &#8594;`)" onmouseleave="removeCursor()">
+              <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeLeft()" onmouseleave="removeCursor()">
               </div>
             <?php else : ?>
 

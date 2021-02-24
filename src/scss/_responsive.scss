@@ -152,6 +152,15 @@
         transform: translateY(0px);
     }
 
+    .tidball-tag-desktop {
+        display: none;
+    }
+
+    .tidball-tag-mobile {
+        display: block;
+    }
+    
+
     .info-hero-section {
         display: flex;
         justify-content: center;

@@ -12,6 +12,25 @@
     text-align: center;
     flex-wrap: nowrap;
     flex-shrink: 0;
+
+    .cursor-bottom-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            max-height: 15px;
+        }
+        .left-arrow {
+            position: absolute;
+            left: -18px;
+        }
+        .right-arrow {
+            position: absolute;
+            right: -18px;
+        }
+    }
 }
 
 .cursor-parentheses {
@@ -24,7 +43,7 @@
 }
   
 .cursor-copy-container {
-    margin: 0 12px;
+    margin: 0 28px;
     display: flex;
     flex-direction: column;
     justify-content: center;

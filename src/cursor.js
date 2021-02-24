@@ -9,10 +9,6 @@ function changeCursor (top, bottom) {
   cursorBottom.innerHTML = bottom
 }
 
-function removeCursor () {
-  cursor.style.display = 'none'
-}
-
 document.addEventListener('mousemove', function (event) {
   const cursorWidth = cursor.offsetWidth
   const halfOfCursor = cursorWidth / 2
@@ -22,7 +18,26 @@ document.addEventListener('mousemove', function (event) {
   cursor.style.top = mouseY + 10 + 'px'
 })
 
-// update mobile cursor 
+const rightArrow = document.querySelector('.right-arrow')
+const leftArrow = document.querySelector('.left-arrow')
+
+function removeRight () {
+  rightArrow.style.display = 'none'
+  leftArrow.style.display = 'block'
+}
+
+function removeLeft () {
+  leftArrow.style.display = 'none'
+  rightArrow.style.display = 'block'
+}
+
+function removeCursor () {
+  cursor.style.display = 'none'
+  rightArrow.style.display = 'none'
+  leftArrow.style.display = 'none'
+}
+
+// update mobile cursor
 
 const mobileCursors = document.querySelectorAll('.mobile-cursor')
 console.log(mobileCursors)
@@ -44,3 +59,5 @@ mobileCursors.forEach(function (element) {
 
 window.changeCursor = changeCursor
 window.removeCursor = removeCursor
+window.removeRight = removeRight
+window.removeLeft = removeLeft

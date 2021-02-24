@@ -27,3 +27,17 @@ const toggleInfo = function (tag) {
 
 toggleInfo(infoTag)
 toggleInfo(closeTag)
+
+// dynamic height of tidball sciullo based on browser
+
+const tidballTag = document.querySelector('.tidball-tag')
+
+const resizeTidballTag = () => {
+  const heroHeight = heroTag.offsetHeight
+  console.log(tidballTag.style)
+  tidballTag.style.height = heroHeight + 'px'
+}
+
+setTimeout(resizeTidballTag, 50)
+
+window.addEventListener('resize', resizeTidballTag)
