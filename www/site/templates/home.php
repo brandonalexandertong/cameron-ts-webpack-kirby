@@ -42,7 +42,9 @@
   <?php if ($backgroundPage = page('background')) : ?>
     <?php foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
       <div class="bg-img-div">
-        <img class="bg-img lazyload" loading="lazy" srcset="<?= $bgimage->resize(2000, 2000)->url() ?>">
+        <noscript class="loading-lazy">
+          <img class="bg-img lazyload" loading="lazy" srcset="<?= $bgimage->resize(2000, 2000)->url() ?>">
+        </noscript>
       </div>
     <?php endforeach ?>
   <?php endif ?>
@@ -92,14 +94,10 @@
 
 <img class="hero-tag tidball-tag-desktop" src="assets/logos/Cameron+Tidball_desktop.svg">
 <img class="hero-tag tidball-tag-mobile" src="assets/logos/Cameron+Tidball_mobile.svg">
-<img class="info-tag" src="assets/logos/Info_CJ-TS.svg">
-
-  
-
-
+<img class="info-tag" src="assets/logos/Info_CJ-TS.svg"> 
 
 <section class="projects-section">
-  <div class="projects-container off-screen">
+  <div class="projects-container">
     <?php if ($projects = page('projects')) : ?>
       <?php if ($albums = $projects->children()->listed()->filterBy('template', 'album')) ?>
       <?php foreach ($projects->children()->listed() as $project) : ?>
@@ -117,9 +115,9 @@
                 <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
               </div>
 
-              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeRight()" onmouseleave="removeCursor()">
+              <div class="prev" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeRight()" onmouseleave="removeCursor()">
               </div>
-              <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeLeft()" onmouseleave="removeCursor()">
+              <div class="next" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeLeft()" onmouseleave="removeCursor()">
               </div>
             <?php else : ?>
 
@@ -132,17 +130,35 @@
                 <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
               </div>
               
-              <div class="prev" onclick="plusSlides(-1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+              <div class="prev">
               </div>
-              <div class="next" onclick="plusSlides(1, <?= $project->indexOf() ?>)" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+
+              <div class="next">
               </div>
             <?php endif ?>
 
-            <?php foreach ($project->images() as $picture) : ?>
-              <img class="visible-image lazyload" width="<?= $picture->resize(1000, 1000)->width() ?>" height="<?= $picture->resize(1000, 1000)->height() ?>" loading="lazy" data-src="<?= $picture->resize(1000, 1000)->url() ?>">
-            <?php endforeach ?>
+            <?php 
+              $ind = 0;
+              foreach ($project->images() as $picture) : 
+            ?>
+              <noscript class="loading-lazy">
+                <img 
+                  class="visible-image lazyload"
+                  width="<?= $picture->resize(1000, 1000)->width() ?>" 
+                  height="<?= $picture->resize(1000, 1000)->height() ?>"
+                  loading="lazy"
+                  src="<?= $picture->resize(1000, 1000)->url() ?>"
+                <?php if ($ind == 0) : ?>
+                  style="display:block;"
+                <?php endif ?>
+                >
+              </noscript>
+            <?php 
+              $ind++;
+              endforeach 
+            ?>
             <?php if ($firstPicture = $project->image()) : ?>
-              <img class="blurred-image lazypreload" width="<?= $picture->resize(400, 400)->width() ?>" height="<?= $picture->resize(400, 400)->height() ?>" src="<?= $firstPicture->resize(400, 400)->url() ?>">
+              <img class="blurred-image" width="<?= $picture->resize(400, 400)->width() ?>" height="<?= $picture->resize(400, 400)->height() ?>" src="<?= $firstPicture->resize(400, 400)->url() ?>">
             <?php endif ?>
           </div>
         <?php else : ?>

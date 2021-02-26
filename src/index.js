@@ -6,6 +6,22 @@
 //     };
 //   });
 
+
+import 'loading-attribute-polyfill'
+import './vertical-scroll'
+import './cursor'
+import './album-array'
+import './vimeo'
+import './utils'
+import './vimeo-loader'
+import './background.js'
+import Scroll from './vertical-scroll'
+
+const scrollContainer = document.querySelector('.projects-section');
+
+const projectScroll = new Scroll(scrollContainer);
+projectScroll.init();
+
 const infoTag = document.querySelector('.info-tag')
 const infoHeroSection = document.querySelector('.info-hero-section')
 const infoContainer = document.querySelector('.info-container')

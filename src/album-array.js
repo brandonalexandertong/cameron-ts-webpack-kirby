@@ -1,48 +1,36 @@
-// album arrays
+function slideshow(container, elementSelector) {
+  const imageContainer = container;
+  const images = imageContainer.querySelectorAll(elementSelector);
+  let currentIndex = 0;
 
-const projects = document.querySelectorAll('.project')
-const projectsAmount = projects.length
-const slideIndex = new Array(projectsAmount).fill(1)
+  function init() {
+    const nextButton = container.querySelector('.next');
+    const prevButton = container.querySelector('.prev');
 
-function plusSlides (n, no) {
-  const x = (projects[no].getElementsByTagName('img'))
-  showSlides(slideIndex[no] += n, no)
+    nextButton.addEventListener('click', e => {
+      switchImage(true)
+    })
 
-  if (n == -1 && slideIndex[no] > 1) {
-    x[slideIndex[no] - 2].setAttribute('loading', 'eager')
-    x[slideIndex[no] - 2].classList.add('lazypreload')
-  }
-}
+    prevButton.addEventListener('click', e => {
+      switchImage(false)
+    })
+  };
 
-function showSlides (n, no) {
-  if (projects[no].classList.contains('album')) {
-    let i
-    const x = (projects[no].querySelectorAll('.visible-image'))
-    if (n > x.length) {
-      slideIndex[no] = 1
-    }
-    if (n < 1) {
-      slideIndex[no] = x.length
-    }
-    if (slideIndex[no] < x.length) {
-      x[slideIndex[no]].setAttribute('loading', 'eager')
-      x[slideIndex[no]].classList.add('lazypreload')
-    }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = 'none'
-    }
-    x[slideIndex[no] - 1].style.display = 'block'
-    x[slideIndex[no] - 1].setAttribute('loading', 'eager')
-    x[slideIndex[no] - 1].classList.add('lazypreload')
-    x[x.length - 1].setAttribute('loading', 'eager')
-    x[x.length - 1].classList.add('lazypreload')
-  }
-}
+  function switchImage(isForwards) {
+    const nextValue = isForwards ? (currentIndex + 1) : ((currentIndex - 1));
+    images[currentIndex].style.display = 'none';
+    currentIndex = (nextValue % images.length + images.length) % images.length;
+    console.log(nextValue)
+    images[currentIndex].style.display = 'block';
+  };
 
-const initialRun = (function () {
-  for (let i = 0; i < projects.length; i++) {
-    showSlides(1, i)
-  }
-}())
+  init();
+};
 
-window.plusSlides = plusSlides
+
+window.addEventListener('load', () => {
+  const projects = document.querySelectorAll('.album');
+  projects.forEach(project => {
+    slideshow(project, '.visible-image')
+  });
+})
