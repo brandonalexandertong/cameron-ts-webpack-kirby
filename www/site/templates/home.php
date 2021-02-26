@@ -40,13 +40,24 @@
 </div>
 <section class="bg-img-section">
   <?php if ($backgroundPage = page('background')) : ?>
-    <?php foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
+    <?php 
+      $ind = 0;
+      foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
       <div class="bg-img-div">
-        <noscript class="loading-lazy">
-          <img class="bg-img lazyload" loading="lazy" srcset="<?= $bgimage->resize(2000, 2000)->url() ?>">
-        </noscript>
+        <img 
+          class="bg-img" 
+          <?php if ($ind == 0) : ?>
+            loading="eager" 
+          <?php else: ?>  
+            loading="lazy" 
+          <?php endif ?>
+          srcset="<?= $bgimage->srcset('image') ?>"
+          src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+        >
       </div>
-    <?php endforeach ?>
+    <?php 
+      $ind++;
+    endforeach ?>
   <?php endif ?>
 </section>
 <section class="info-hero-section slide-up">
@@ -96,7 +107,7 @@
 <img class="hero-tag tidball-tag-mobile" src="assets/logos/Cameron+Tidball_mobile.svg">
 <img class="info-tag" src="assets/logos/Info_CJ-TS.svg"> 
 
-<section class="projects-section">
+<section class="projects-section --hide-right">
   <div class="projects-container">
     <?php if ($projects = page('projects')) : ?>
       <?php if ($albums = $projects->children()->listed()->filterBy('template', 'album')) ?>
@@ -140,16 +151,22 @@
             <?php 
               $ind = 0;
               foreach ($project->images() as $picture) : 
+              $widthInVHBig = ($picture->width() / $picture->height()) * 85;
+              $widthInVHSmall = ($picture->width() / $picture->height()) * 65;
             ?>
               <noscript class="loading-lazy">
                 <img 
+                  sizes="(min-width: 600px) <?= $widthInVHBig ?>vh, <?= $widthInVHSmall ?>vh"
                   class="visible-image lazyload"
                   width="<?= $picture->resize(1000, 1000)->width() ?>" 
                   height="<?= $picture->resize(1000, 1000)->height() ?>"
-                  loading="lazy"
+                  srcset="<?= $picture->srcset('image') ?>"
                   src="<?= $picture->resize(1000, 1000)->url() ?>"
                 <?php if ($ind == 0) : ?>
+                  loading="eager"
                   style="display:block;"
+                <?php else: ?>
+                  loading="lazy"
                 <?php endif ?>
                 >
               </noscript>
@@ -158,7 +175,12 @@
               endforeach 
             ?>
             <?php if ($firstPicture = $project->image()) : ?>
-              <img class="blurred-image" width="<?= $picture->resize(400, 400)->width() ?>" height="<?= $picture->resize(400, 400)->height() ?>" src="<?= $firstPicture->resize(400, 400)->url() ?>">
+              <img 
+                class="blurred-image" 
+                width="<?= $picture->resize(400, 400)->width() ?>" 
+                height="<?= $picture->resize(400, 400)->height() ?>" 
+                src="<?= $firstPicture->resize(400, 400)->url() ?>"
+              >
             <?php endif ?>
           </div>
         <?php else : ?>

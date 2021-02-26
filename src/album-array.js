@@ -1,4 +1,4 @@
-function slideshow(container, elementSelector) {
+export default function slideshow(container, elementSelector) {
   const imageContainer = container;
   const images = imageContainer.querySelectorAll(elementSelector);
   let currentIndex = 0;
@@ -26,11 +26,3 @@ function slideshow(container, elementSelector) {
 
   init();
 };
-
-
-window.addEventListener('load', () => {
-  const projects = document.querySelectorAll('.album');
-  projects.forEach(project => {
-    slideshow(project, '.visible-image')
-  });
-})

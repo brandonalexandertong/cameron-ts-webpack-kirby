@@ -53,7 +53,6 @@ const updateCursor = (cursor) => {
 }
 
 mobileCursors.forEach(function (element) {
-  // console.log(element)
   updateCursor(element)
 })
 

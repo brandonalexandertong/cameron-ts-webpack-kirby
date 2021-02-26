@@ -1,5 +1,5 @@
 // looping background infinitely with lazy loading
-function addSelected (array) {
+export default function addSelected (array) {
   let i = 0
   array[i].classList.add('selected')
   array[i + 1].setAttribute('loading', 'eager');
@@ -10,11 +10,5 @@ function addSelected (array) {
 
     i = (i + 1) % array.length
     array[(i + 1) % array.length].setAttribute('loading', 'eager');
-  }, 4000)
+  }, 3000)
 }
-
-window.addEventListener('load', () => {
-  const bgImageArray = document.querySelectorAll('.bg-img')
-  
-  addSelected(bgImageArray)
-})

@@ -1,21 +1,32 @@
-// // Lightbox
-// Array.from(document.querySelectorAll("[data-lightbox]")).forEach(element => {
-//     element.onclick = (e) => {
-//       e.preventDefault();
-//       basicLightbox.create(`<img src="${element.href}">`).show();
-//     };
-//   });
-
-
 import 'loading-attribute-polyfill'
-import './vertical-scroll'
-import './cursor'
-import './album-array'
-import './vimeo'
-import './utils'
-import './vimeo-loader'
-import './background.js'
-import Scroll from './vertical-scroll'
+
+import './cursor.js'
+import Slideshow from './album-array.js'
+import Scroll from './vertical-scroll.js'
+import Vimeo from './vimeo.js'
+import Background from './background.js'
+
+window.addEventListener('load', () => {
+  const projects = document.querySelectorAll('.album');
+  projects.forEach(project => {
+    Slideshow(project, '.visible-image')
+  });
+
+  const bgImageArray = document.querySelectorAll('.bg-img')
+  Background(bgImageArray)
+
+  const videos = document.querySelectorAll('.vimeo-player')
+  videos.forEach(function (element) {
+    const id = element.dataset.vimeo
+    new Vimeo({ id, element })
+  })
+})
+
+window.addEventListener('wheel', () => {
+  scrollContainer.classList.remove('--hide-right');
+}, {
+  once: true
+})
 
 const scrollContainer = document.querySelector('.projects-section');
 
@@ -27,8 +38,6 @@ const infoHeroSection = document.querySelector('.info-hero-section')
 const infoContainer = document.querySelector('.info-container')
 const heroTag = document.querySelector('.hero-tag')
 const closeTag = document.querySelector('.close-tag')
-const selectedTag = document.querySelector('.selected-works-tag')
-// adding slide function to info section
 
 const slideFunction = function() {
   infoHeroSection.classList.toggle('slide-up')
@@ -43,17 +52,3 @@ const toggleInfo = function (tag) {
 
 toggleInfo(infoTag)
 toggleInfo(closeTag)
-
-// dynamic height of tidball sciullo based on browser
-
-// const tidballTag = document.querySelector('.tidball-tag')
-
-// const resizeTidballTag = () => {
-//   const heroHeight = heroTag.offsetHeight
-//   console.log(tidballTag.style)
-//   tidballTag.style.height = heroHeight + 'px'
-// }
-
-// setTimeout(resizeTidballTag, 50)
-
-// window.addEventListener('resize', resizeTidballTag)

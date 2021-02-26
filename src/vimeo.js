@@ -71,35 +71,6 @@ class Vimeo {
       throw new Error(`Init vimeo – ${error}`)
     }
 
-    // this.observer = new IntersectionObserver(this.ioCallback.bind(this), {})
-    // this.observer.observe(this.el)
-
-    // if (!!window.IntersectionObserver) {
-
-    //   let observer = new IntersectionObserver((entries, observer) => {
-    //     entries.forEach(entry => {
-    //       // if (entry.intersectionRatio =/= 1 && !this.isPlaying) {
-
-    //       console.log(entry.isIntersecting,  entry.intersectionRatio )
-    //       // console.log(entry.intersectionRatio)
-    //       // if (entry.intersectionRatio <= 0.5) {
-    //       //   console.log(this.el,'not visible anymore')
-          
-    //       // }
-    //       // if (entry.intersectionRatio > 0.5) {
-    //       //   console.log(this.el,'is now visible')
-          
-    //       // }
-         
-
-    //     })
-    //   }, { threshold: 1 })
-
-    //   observer.observe(this.el);
-    // }
-
-
-
     try {
       const loadEvent = this.options.autoplay === true ? 'playing' : 'loaded'
 

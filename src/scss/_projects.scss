@@ -3,6 +3,10 @@
     --blur-amount: 4px;
 }
 
+.--hide-right {
+  transform: translateX(100vw);
+}
+
 .projects-section {
     position: absolute;
     width: 100%;
@@ -11,6 +15,7 @@
     bottom: 0;
     left: 0;
     scrollbar-width: 0px;
+    transition: transform 500ms ease-out;
 
     &::-webkit-scrollbar {
       width: 0px;
