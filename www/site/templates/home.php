@@ -90,8 +90,8 @@
   </div>
 </section>
 
-<img class="hero-tag tidball-tag-desktop" src="assets/logos/Cameron.svg">
-<img class="hero-tag tidball-tag-mobile" src="assets/logos/tidball-sciullo-mobile.svg">
+<img class="hero-tag tidball-tag-desktop" src="assets/logos/Cameron+Tidball_desktop.svg">
+<img class="hero-tag tidball-tag-mobile" src="assets/logos/Cameron+Tidball_mobile.svg">
 <img class="info-tag" src="assets/logos/Info_CJ-TS.svg">
 
   
@@ -157,7 +157,8 @@
                     <button class="vimeo-player__pause">PAUSE</button>
                     <div class="vimeo-player__seek">0:00</div>
                     <button class="vimeo-player__mute icon">
-                      <img src="assets/icons/volume.png" alt="Mute">
+                      <img class = "mute-off" src="assets/icons/volume_up.svg" alt="Mute">
+                      <img class = "mute-on" src="assets/icons/volume_off.svg" alt="Mute">
                     </button>
                     <button class="vimeo-player__maximize icon">
                       <img src="assets/icons/fullscreen.png" alt="Maximize">

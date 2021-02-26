@@ -14,14 +14,20 @@
         scrollbar-width: none;  /* Firefox */
         display: flex;
         flex-wrap: nowrap;
-        padding: 22px 0;
+        padding: 22px 1vw;
+
+        .project:last-child {
+            margin: 0 0 0 8px;
+        }
+
+        .project:first-child {
+            // display: inline-block;
+            margin: 0 8px 0 0;     
+        }
 
         .project {
-            // display: inline-block;
-            margin: 0 1vw;
+            margin: 0 8px;
             position: relative;
-
-
 
             .prev {
                 height: 100%;
@@ -52,7 +58,7 @@
             // remove
             z-index: -1;
             display: none;
-            border-radius: 10px;
+            border-radius: 16px;
             width: auto;
         }
           
@@ -67,4 +73,5 @@
     .projects-container::-webkit-scrollbar {
         display: none;  /* Safari and Chrome */
     }
+    
 }

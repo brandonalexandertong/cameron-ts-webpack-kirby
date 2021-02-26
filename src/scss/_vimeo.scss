@@ -41,6 +41,22 @@
         display: flex;
     }
 
+    .active .mute-on {
+        display: none;
+    }
+
+    .mute-on {
+        display: block;
+    }
+
+    .active .mute-off {
+        display: block;
+    }
+
+    .mute-off {
+        display: none;
+    }
+
     &__progress {
         --progress: 0;
         bottom: 18px;
