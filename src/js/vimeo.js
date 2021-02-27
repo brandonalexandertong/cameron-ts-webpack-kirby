@@ -3,7 +3,6 @@ import {
   launchIntoFullscreen, exitFullscreen, iOS, isSafariDesktop,
 } from './utils'
 
-
 class Vimeo {
   constructor({
     id, element, options = {

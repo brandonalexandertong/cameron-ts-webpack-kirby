@@ -1,31 +1,5 @@
-<?php
-/*
-  Templates render the content of your pages.
-
-  They contain the markup together with some control structures
-  like loops or if-statements. The `$page` variable always
-  refers to the currently active page.
-
-  To fetch the content from each field we call the field name as a
-  method on the `$page` object, e.g. `$page->title()`.
-
-  This home template renders content from others pages, the children of
-  the `photography` page to display a nice gallery grid.
-
-  Snippets like the header and footer contain markup used in
-  multiple templates. They also help to keep templates clean.
-
-  More about templates: https://getkirby.com/docs/guide/templates/basics
-*/
-?>
 <?php snippet('header') ?>
-<?php
-/*
-    We always use an if-statement to check if a page exists to
-    prevent errors in case the page was deleted or renamed before
-    we call a method like `children()` in this case
-  */
-?>
+
 <div class="cursor">
   <img src="assets/images/(.svg" class="cursor-parentheses cursor-parentheses-left">
   <div class="cursor-copy-container">
@@ -45,14 +19,9 @@
       foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
       <div class="bg-img-div">
         <img 
-          class="bg-img" 
-          <?php if ($ind == 0) : ?>
-            loading="eager" 
-          <?php else: ?>  
-            loading="lazy" 
-          <?php endif ?>
-          srcset="<?= $bgimage->srcset('image') ?>"
-          src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+          class="bg-img lazyload" 
+          data-srcset="<?= $bgimage->srcset('image') ?>"
+          data-src="<?= $bgimage->resize(2000, 2000)->url() ?>"
         >
       </div>
     <?php 
@@ -114,10 +83,10 @@
       <?php foreach ($projects->children()->listed() as $project) : ?>
 
         <?php if ($project->template() == 'album') : ?>
-          <div class="album project">
+          <div class="album project" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
             <?php if ($project->images()->count() > 1) : ?>
 
-              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
+              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?> " data-info="<?= $project->projectInfo() ?>">
                 <img src="assets/images/(-white.svg" class="mobile-cursor-parentheses cursor-parentheses-left">
                 <div class="cursor-copy-container">
                   <p class="cursor-top"></p>
@@ -126,9 +95,9 @@
                 <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
               </div>
 
-              <div class="prev" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeRight()" onmouseleave="removeCursor()">
+              <div class="prev">
               </div>
-              <div class="next" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`); removeLeft()" onmouseleave="removeCursor()">
+              <div class="next">
               </div>
             <?php else : ?>
 
@@ -154,22 +123,15 @@
               $widthInVHBig = ($picture->width() / $picture->height()) * 85;
               $widthInVHSmall = ($picture->width() / $picture->height()) * 65;
             ?>
-              <noscript class="loading-lazy">
+
                 <img 
-                  sizes="(min-width: 600px) <?= $widthInVHBig ?>vh, <?= $widthInVHSmall ?>vh"
                   class="visible-image lazyload"
+                  sizes="(min-width: 600px) <?= $widthInVHBig ?>vh, <?= $widthInVHSmall ?>vh"
                   width="<?= $picture->resize(1000, 1000)->width() ?>" 
                   height="<?= $picture->resize(1000, 1000)->height() ?>"
-                  srcset="<?= $picture->srcset('image') ?>"
-                  src="<?= $picture->resize(1000, 1000)->url() ?>"
-                <?php if ($ind == 0) : ?>
-                  loading="eager"
-                  style="display:block;"
-                <?php else: ?>
-                  loading="lazy"
-                <?php endif ?>
+                  data-src="<?= $picture->resize(1000, 1000)->url() ?>"
+                  data-srcset="<?= $picture->srcset('image') ?>"
                 >
-              </noscript>
             <?php 
               $ind++;
               endforeach 
@@ -184,11 +146,11 @@
             <?php endif ?>
           </div>
         <?php else : ?>
-          <div class="project video">
+          <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
 
             <div class="o-ratio-16-9">
 
-              <div class="vimeo-player" data-vimeo="<?= $project->vimeoId() ?>" onmouseenter="changeCursor(`<?= $project->projectName() ?>`, `<?= $project->projectInfo() ?>`)" onmouseleave="removeCursor()">
+              <div class="vimeo-player" data-vimeo="<?= $project->vimeoId() ?>">
                 <?php snippet('loader') ?>
                   <div class="vimeo-player__ui">
                     <button class="vimeo-player__play">PLAY</button>

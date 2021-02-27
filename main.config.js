@@ -9,8 +9,7 @@ const path = require('path')
  */
 const entries = {
   'src/index.js': 'www/assets/builds/bundle.js',
-  'src/index.scss': 'www/assets/builds/bundle.css',
-  'src/base.scss': 'www/assets/builds/bundle.css'
+  'src/index.scss': 'www/assets/builds/bundle.css'
 }
 
 /**

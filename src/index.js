@@ -1,16 +1,21 @@
 import 'loading-attribute-polyfill'
-
-import './cursor.js'
-import Slideshow from './album-array.js'
-import Scroll from './vertical-scroll.js'
-import Vimeo from './vimeo.js'
-import Background from './background.js'
+// import './js/cursor.js'
+import Slideshow from './js/album-array.js'
+import Scroll from './js/vertical-scroll.js'
+import Vimeo from './js/vimeo.js'
+import Background from './js/background.js'
+import UpdateCursor from './js/cursor.js'
 
 window.addEventListener('load', () => {
-  const projects = document.querySelectorAll('.album');
-  projects.forEach(project => {
+  const albums = document.querySelectorAll('.album')
+  const projects = document.querySelectorAll('.project')
+  albums.forEach(project => {
     Slideshow(project, '.visible-image')
-  });
+  })
+
+  projects.forEach(project => {
+    UpdateCursor(project)
+  })
 
   const bgImageArray = document.querySelectorAll('.bg-img')
   Background(bgImageArray)
@@ -23,15 +28,15 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('wheel', () => {
-  scrollContainer.classList.remove('--hide-right');
+  scrollContainer.classList.remove('--hide-right')
 }, {
   once: true
 })
 
-const scrollContainer = document.querySelector('.projects-section');
+const scrollContainer = document.querySelector('.projects-section')
 
-const projectScroll = new Scroll(scrollContainer);
-projectScroll.init();
+const projectScroll = new Scroll(scrollContainer)
+projectScroll.init()
 
 const infoTag = document.querySelector('.info-tag')
 const infoHeroSection = document.querySelector('.info-hero-section')
@@ -39,7 +44,7 @@ const infoContainer = document.querySelector('.info-container')
 const heroTag = document.querySelector('.hero-tag')
 const closeTag = document.querySelector('.close-tag')
 
-const slideFunction = function() {
+const slideFunction = function () {
   infoHeroSection.classList.toggle('slide-up')
   heroTag.classList.toggle('slide-down')
   infoTag.classList.toggle('slide-down')
