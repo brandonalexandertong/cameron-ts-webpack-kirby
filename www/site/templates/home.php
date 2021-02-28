@@ -133,7 +133,7 @@
             <?php endif ?>
           </div>
         <?php else : ?>
-          <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>" style="cursor:url(assets/icons/triangle.svg), auto;">
+          <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
             <div class="o-ratio-16-9">
               <div class="vimeo-player" data-vimeo="<?= $project->vimeoId() ?>">
                 <?php snippet('loader') ?>
