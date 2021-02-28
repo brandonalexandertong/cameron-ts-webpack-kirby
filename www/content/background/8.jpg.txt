@@ -1,5 +1,0 @@
-Template: background
-
-----
-
-Sort: 10

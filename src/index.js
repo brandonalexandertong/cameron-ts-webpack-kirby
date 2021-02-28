@@ -5,19 +5,24 @@ import Scroll from './js/vertical-scroll.js'
 import Vimeo from './js/vimeo.js'
 import Background from './js/background.js'
 import UpdateCursor from './js/cursor.js'
+import Hover from './js/hover.js'
+
+const scrollContainer = document.querySelector('.projects-section')
+const backgroundSection = document.querySelector('.bg-img-section')
+const bgImageArray = document.querySelectorAll('.bg-img')
 
 window.addEventListener('load', () => {
   const albums = document.querySelectorAll('.album')
   const projects = document.querySelectorAll('.project')
   albums.forEach(project => {
     Slideshow(project, '.visible-image')
+    // Hover(project)
   })
 
   projects.forEach(project => {
     UpdateCursor(project)
   })
 
-  const bgImageArray = document.querySelectorAll('.bg-img')
   Background(bgImageArray)
 
   const videos = document.querySelectorAll('.vimeo-player')
@@ -29,11 +34,30 @@ window.addEventListener('load', () => {
 
 window.addEventListener('wheel', () => {
   scrollContainer.classList.remove('--hide-right')
+  bgImageArray.forEach(image => {
+    image.classList.add('blur-background')
+  })
 }, {
   once: true
 })
 
-const scrollContainer = document.querySelector('.projects-section')
+backgroundSection.addEventListener('click', () => {
+  scrollContainer.classList.remove('--hide-right')
+  bgImageArray.forEach(image => {
+    image.classList.add('blur-background')
+  })
+}, {
+  once: true
+})
+
+document.addEventListener('mousemove', function (event) {
+  const cursor = document.getElementById('cursor')
+  const cursorWidth = cursor.offsetWidth
+  const halfOfCursor = cursorWidth / 2
+  const mouseX = event.pageX
+  const mouseY = event.pageY
+  cursor.style.transform = `translate(${mouseX - halfOfCursor}px, ${mouseY + 10}px)`
+})
 
 const projectScroll = new Scroll(scrollContainer)
 projectScroll.init()

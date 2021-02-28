@@ -14,7 +14,7 @@
     height: var(--project-height);
     width: calc( var(--project-height) * 1.777777777777778 );
     // background-color: black;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
 }
 
@@ -116,7 +116,7 @@
         width: 100%;
         height: 100%;
         max-width: unset;  
-        border-radius: 10px;
+        border-radius: 30px;
         z-index: -1;
     }
 

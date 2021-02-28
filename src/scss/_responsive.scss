@@ -1,4 +1,7 @@
 @media (max-width: 1200px) {
+    :root {
+        --font-size-body: 10px;
+    }
     .info-hero-section {
         .info-container {
             height: 110px;
@@ -8,10 +11,6 @@
                 grid-template-columns: (24px) fit-content(220px) 0px fit-content(90px) fit-content(230px) 0px fit-content(24px) fit-content(48px) auto fit-content(24px);
                 grid-column-gap: 12px;
                 grid-template-rows: 10px auto;
-
-                p, ul {
-                    font-size: 10px;
-                } 
 
                 h3 {
                     font-size: 9px;
@@ -40,6 +39,9 @@
 }
 
 @media (max-width: 850px) {
+    :root {
+        --font-size-body: 8px;
+    }
     .info-hero-section {
         .info-container {
             height: 95px;
@@ -53,9 +55,6 @@
                 h3 {
                     font-size: 7px;
                 }
-                p, ul {
-                    font-size: 8px;
-                } 
 
                 .selected-works-container {
                     .selected-works {
@@ -80,6 +79,9 @@
 
 
 @media (max-width: 700px) {
+    :root {
+        --font-size-body: 7px;
+    }
     .info-hero-section {
         .info-container {
             height: 75px;
@@ -92,9 +94,6 @@
                 h3 {
                     font-size: 7px;
                 }
-                p, ul {
-                    font-size: 7px;
-                } 
 
                 .selected-works-container {
                     .selected-works {
@@ -120,9 +119,10 @@
 @media (max-width: 600px) {
     :root {
         --project-height: 65vh;
+        --font-size-body: 10px;
     }
 
-    .cursor {
+    #cursor {
         display: none !important;
     }
 
@@ -204,9 +204,6 @@
                 h3 {
                     font-size: 8px;
                 }
-                p, ul {
-                    font-size: 9px;
-                } 
 
                 .selected-works-container {
                     .selected-works {

@@ -1,16 +1,19 @@
 :root {
-    --project-height: 85vh;
-    --blur-amount: 4px;
+    --project-height: 88vh;
+    --blur-amount: 70px;
 }
 
 .--hide-right {
   transform: translateX(100vw);
+  opacity: 0;
 }
 
 .projects-section {
     position: absolute;
     width: 100%;
-    overflow-y: hidden;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
     overflow-x: auto;
     bottom: 0;
     left: 0;
@@ -71,7 +74,7 @@
             // remove
             z-index: -1;
             display: none;
-            border-radius: 16px;
+            border-radius: 30px;
             width: auto;
         }
           

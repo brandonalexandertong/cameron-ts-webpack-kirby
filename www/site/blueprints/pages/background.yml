@@ -8,7 +8,7 @@ options:
 sections:
   images:
     type: files
-    template: background
+    template: image
     layout: cards
     min: 10
     max: 10

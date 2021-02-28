@@ -2,7 +2,7 @@
     --cursor-type: pointer;
 }
 
-.cursor {
+#cursor {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -14,28 +14,28 @@
     flex-wrap: nowrap;
     flex-shrink: 0;
 
-    .cursor-bottom-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-
-        img {
-            max-height: 15px;
-        }
-        .left-arrow {
-            position: absolute;
-            left: -18px;
-        }
-        .right-arrow {
-            position: absolute;
-            right: -18px;
-        }
+    .cursor-bottom-row img {
+        max-height: 15px;
+    }
+    .left-arrow {
+        position: absolute;
+        left: -18px;
+    }
+    .right-arrow {
+        position: absolute;
+        right: -18px;
     }
 }
 
+.cursor-bottom-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 .cursor-parentheses {
-    max-height: 100px;
+    max-height: 64px;
 }
 
 .mobile-cursor-parentheses {
@@ -44,7 +44,7 @@
 }
   
 .cursor-copy-container {
-    margin: 0 28px;
+    margin: 0 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,5 +67,18 @@
 
     .cursor-copy-container {
         margin: 0 8px;
+    }
+
+    .cursor-bottom-row img {
+        display: unset !important;
+        max-height: 10px;
+    }
+    .left-arrow {
+        position: absolute;
+        left: -4px;
+    }
+    .right-arrow {
+        position: absolute;
+        right: -4px;
     }
 }

@@ -1,16 +1,16 @@
 <?php snippet('header') ?>
 
-<div class="cursor">
-  <img src="assets/images/(.svg" class="cursor-parentheses cursor-parentheses-left">
+<div id="cursor">
+  <img src="assets/images/(.svg" alt="Left Parentheses Desktop Cursor" class="cursor-parentheses cursor-parentheses-left">
   <div class="cursor-copy-container">
-    <p class="cursor-top"></p>
+    <p class="cursor-top">Couch Prints</p>
     <div class = "cursor-bottom-row">
-      <img class = "left-arrow" src="assets/icons/Cam_Arrow_Black_left.png">
-      <p class="cursor-bottom"></p>
-      <img class = "right-arrow" src="assets/icons/Cam_Arrow_Black_Right.png">
+      <img class = "left-arrow" alt="Left Arrow Desktop Cursor" src="assets/icons/Cam_Arrow_Black_left.png">
+      <p class="cursor-bottom">Notion Magazine</p>
+      <img class = "right-arrow" alt="Right Arrow Desktop Cursor" src="assets/icons/Cam_Arrow_Black_Right.png">
     </div>  
   </div>
-  <img src="assets/images/).svg" class="cursor-parentheses cursor-parentheses-right">
+  <img src="assets/images/).svg" alt="Right Parentheses Desktop Cursor" class="cursor-parentheses cursor-parentheses-right">
 </div>
 <section class="bg-img-section">
   <?php if ($backgroundPage = page('background')) : ?>
@@ -19,6 +19,7 @@
       foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
       <div class="bg-img-div">
         <img 
+          alt="<?= $bgimage->alt() ?>"
           class="bg-img lazyload" 
           data-srcset="<?= $bgimage->srcset('image') ?>"
           data-src="<?= $bgimage->resize(2000, 2000)->url() ?>"
@@ -64,17 +65,18 @@
             </li>
           <?php endforeach ?>
         </ul>
-        <p class="close-tag info-content">
-          Close
-        </p>
+        <button class="close-tag info-content">Close</button>
+        
       <?php endif ?>
     </div>
   </div>
 </section>
 
-<img class="hero-tag tidball-tag-desktop" src="assets/logos/Cameron+Tidball_desktop.svg">
-<img class="hero-tag tidball-tag-mobile" src="assets/logos/Cameron+Tidball_mobile.svg">
-<img class="info-tag" src="assets/logos/Info_CJ-TS.svg"> 
+<img class="hero-tag tidball-tag-desktop" alt="Desktop Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_desktop.svg">
+<img class="hero-tag tidball-tag-mobile" alt="Mobile Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_mobile.svg">
+<button>
+  <img class="info-tag" alt="Info Button" src="assets/logos/Info_CJ-TS.svg"> 
+</button>
 
 <section class="projects-section --hide-right">
   <div class="projects-container">
@@ -84,47 +86,31 @@
 
         <?php if ($project->template() == 'album') : ?>
           <div class="album project" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
-            <?php if ($project->images()->count() > 1) : ?>
-
-              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?> " data-info="<?= $project->projectInfo() ?>">
-                <img src="assets/images/(-white.svg" class="mobile-cursor-parentheses cursor-parentheses-left">
+            <div class="visible-images">
+              <div class = "mobile-cursor">
+                <img src="assets/images/(-white.svg" alt="Left Parentheses" class="mobile-cursor-parentheses cursor-parentheses-left">
                 <div class="cursor-copy-container">
-                  <p class="cursor-top"></p>
-                  <p class="cursor-bottom"></p>
+                  <p class="cursor-top"><?= $project->projectName() ?></p>
+                  <div class = "cursor-bottom-row">
+                    <img class = "left-arrow" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_left.png">
+                    <p class="cursor-bottom"><?= $project->projectInfo() ?></p>
+                    <img class = "right-arrow" alt="Right Arrow Icon" src="assets/icons/Cam_Arrow_White_Right.png">
+                  </div>
                 </div>
-                <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
+                <img src="assets/images/)-white.svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
               </div>
 
-              <div class="prev">
-              </div>
-              <div class="next">
-              </div>
-            <?php else : ?>
-
-              <div class = "mobile-cursor" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
-                <img src="assets/images/(-white.svg" class="mobile-cursor-parentheses cursor-parentheses-left">
-                <div class="cursor-copy-container">
-                  <p class="cursor-top"></p>
-                  <p class="cursor-bottom"></p>
-                </div>
-                <img src="assets/images/)-white.svg" class="mobile-cursor-parentheses cursor-parentheses-right">
-              </div>
-              
-              <div class="prev">
-              </div>
-
-              <div class="next">
-              </div>
-            <?php endif ?>
-
+              <button class="prev">
+              </button>
+              <button class="next">
+              </button>
             <?php 
-              $ind = 0;
               foreach ($project->images() as $picture) : 
-              $widthInVHBig = ($picture->width() / $picture->height()) * 85;
+              $widthInVHBig = ($picture->width() / $picture->height()) * 88;
               $widthInVHSmall = ($picture->width() / $picture->height()) * 65;
             ?>
-
                 <img 
+                  alt ="<?= $picture->alt() ?>"
                   class="visible-image lazyload"
                   sizes="(min-width: 600px) <?= $widthInVHBig ?>vh, <?= $widthInVHSmall ?>vh"
                   width="<?= $picture->resize(1000, 1000)->width() ?>" 
@@ -133,11 +119,12 @@
                   data-srcset="<?= $picture->srcset('image') ?>"
                 >
             <?php 
-              $ind++;
               endforeach 
             ?>
+            </div>
             <?php if ($firstPicture = $project->image()) : ?>
               <img 
+                alt ="Blurry background image for design"
                 class="blurred-image" 
                 width="<?= $picture->resize(400, 400)->width() ?>" 
                 height="<?= $picture->resize(400, 400)->height() ?>" 
@@ -146,10 +133,8 @@
             <?php endif ?>
           </div>
         <?php else : ?>
-          <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
-
+          <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>" style="cursor:url(assets/icons/triangle.svg), auto;">
             <div class="o-ratio-16-9">
-
               <div class="vimeo-player" data-vimeo="<?= $project->vimeoId() ?>">
                 <?php snippet('loader') ?>
                   <div class="vimeo-player__ui">
