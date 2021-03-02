@@ -1,5 +1,5 @@
-import 'loading-attribute-polyfill'
-// import './js/cursor.js'
+import 'lazysizes';
+
 import Slideshow from './js/album-array.js'
 import Scroll from './js/vertical-scroll.js'
 import Vimeo from './js/vimeo.js'

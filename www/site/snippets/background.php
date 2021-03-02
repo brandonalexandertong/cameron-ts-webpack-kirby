@@ -5,10 +5,17 @@
       foreach ($backgroundPage->images()->sortBy('sort', 'filename') as $bgimage) : ?>
       <div class="bg-img-div">
         <img 
-          alt="<?= $bgimage->alt() ?>"
-          class="bg-img lazyload" 
-          data-srcset="<?= $bgimage->srcset('image') ?>"
-          data-src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+          <?php if ($ind == 0 ): ?>
+            alt="<?= $bgimage->alt() ?>"
+            class="bg-img" 
+            srcset="<?= $bgimage->srcset('image') ?>"
+            src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+          <?php else: ?>
+            alt="<?= $bgimage->alt() ?>"
+            class="bg-img lazyload" 
+            data-srcset="<?= $bgimage->srcset('image') ?>"
+            data-src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+          <?php endif; ?>
         >
       </div>
     <?php 

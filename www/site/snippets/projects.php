@@ -2,10 +2,8 @@
 <section class="projects-section --hide-right">
   <div class="projects-container">
     <?php if ($projects = page('projects')) : ?>
-      <?php if ($albums = $projects->children()->listed()->filterBy('template', 'album')) ?>
       <?php foreach ($projects->children()->listed() as $project) : ?>
-
-        <?php if ($project->template() == 'album') : ?>
+        <?php if ($project->blueprint()->title() == 'Album') : ?>
           <div class="album project" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
             <div class="visible-images">
               <div class = "mobile-cursor">

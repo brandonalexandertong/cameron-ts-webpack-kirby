@@ -22,8 +22,8 @@ export default function slideshow (container, elementSelector) {
     nextIndex = ((currentIndex + 1) % images.length + images.length) % images.length
     prevIndex = ((currentIndex - 1) % images.length + images.length) % images.length
     images[currentIndex].style.display = 'block'
-    images[nextIndex].classList.add('lazypreload')
-    images[prevIndex].classList.add('lazypreload')
+    lazySizes.loader.unveil(images[nextIndex]);
+    lazySizes.loader.unveil(images[prevIndex]);
   }
 
   function switchImage (isForwards) {
