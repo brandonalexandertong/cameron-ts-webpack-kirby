@@ -32,21 +32,22 @@ window.addEventListener('load', () => {
   })
 })
 
-window.addEventListener('wheel', () => {
+function slideIn () {
   scrollContainer.classList.remove('--hide-right')
   bgImageArray.forEach(image => {
     image.classList.add('blur-background')
   })
-}, {
+}
+
+window.addEventListener('wheel', slideIn, {
   once: true
 })
 
-backgroundSection.addEventListener('click', () => {
-  scrollContainer.classList.remove('--hide-right')
-  bgImageArray.forEach(image => {
-    image.classList.add('blur-background')
-  })
-}, {
+window.addEventListener('click', slideIn, {
+  once: true
+})
+
+window.addEventListener('touchmove', slideIn, {
   once: true
 })
 
