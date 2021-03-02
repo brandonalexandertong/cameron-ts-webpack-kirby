@@ -118,7 +118,7 @@
 
 @media (max-width: 600px) {
     :root {
-        --project-height: 65vh;
+        --project-height: 70vh;
         --font-size-body: 10px;
     }
 
@@ -131,11 +131,12 @@
     }
 
     .projects-section {
-    position: unset;
-    margin: -45vh 8px 0 8px;
+        height: 100%;
+        width: 100%;
+
+    
         .projects-container {
-            padding: 6vh 0;
-            overflow-x: scroll;
+            padding: 6vh 1vw;
         }
     }
     .info-tag {
