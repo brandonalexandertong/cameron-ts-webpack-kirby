@@ -1,4 +1,3 @@
-
 <section class="projects-section --hide-right">
   <div class="projects-container">
     <?php if ($projects = page('projects')) : ?>
@@ -15,5 +14,4 @@
       <?php endforeach ?>
     <?php endif ?>
   </div>
-
 </section>
