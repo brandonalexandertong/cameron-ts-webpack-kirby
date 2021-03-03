@@ -28,7 +28,7 @@ export default function newCursor (project) {
     }
   })
   project.addEventListener('mouseleave', function (e) {
-    // cursor.style.opacity = '0'
+    cursor.style.opacity = '0'
     leftArrow.style.display = 'none'
     rightArrow.style.display = 'none'
   })

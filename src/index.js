@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
     Slideshow(project, '.visible-image')
   })
 
-  body.style.cursor = 'url(assets/icons/triangle.svg), auto'
+  body.style.cursor = 'url(assets/icons/Cam_Arrow_Black_Left.png), auto'
 
   // bgImageSection.style.opacity = '1'
   setTimeout(function () {

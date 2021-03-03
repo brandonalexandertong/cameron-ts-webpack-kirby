@@ -9,16 +9,19 @@ export default class Scroll {
     const bgImageContainer = document.querySelector('.bg-img-section')
 
     let viewportWidth
+    const bodyTag = document.querySelector('body')
 
     function blurBackground (container) {
       const scrollDistance = container.scrollLeft
       viewportWidth = window.innerWidth
-
-      if (scrollDistance > viewportWidth) {
-        bgImageContainer.classList.add('blur-background')
-      } else {
-        bgImageContainer.classList.remove('blur-background')
+      let blurAmount = 0
+      if (scrollDistance > viewportWidth / 2) {
+        blurAmount = 1
+        bodyTag.style.cursor = 'url(assets/icons/triangle.svg), auto'
+      } else if (scrollDistance > viewportWidth) {
+        blurAmount = 3
       }
+      bgImageContainer.style.filter = `blur(${blurAmount}px)`
     }
 
     window.addEventListener('resize', () => {
