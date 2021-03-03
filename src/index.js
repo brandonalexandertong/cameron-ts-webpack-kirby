@@ -5,11 +5,11 @@ import Vimeo from './js/vimeo.js'
 import Background from './js/background.js'
 import UpdateCursor from './js/cursor.js'
 
+const body = document.querySelector('body')
 const scrollContainer = document.querySelector('.projects-section')
 const bgImageArray = document.querySelectorAll('.bg-img')
+const bgImageSection = document.querySelector('.bg-img-section')
 const cursor = document.getElementById('cursor')
-const cursorWidth = cursor.offsetWidth
-const halfOfCursor = cursorWidth / 2
 const projectScroll = new Scroll(scrollContainer)
 const infoTag = document.querySelector('.info-tag')
 const infoHeroSection = document.querySelector('.info-hero-section')
@@ -36,6 +36,16 @@ window.addEventListener('load', () => {
     Slideshow(project, '.visible-image')
   })
 
+  body.style.cursor = 'url(assets/icons/triangle.svg), auto'
+
+  // bgImageSection.style.opacity = '1'
+  setTimeout(function () {
+    heroTag.style.opacity = '1'
+  }, 300)
+  setTimeout(function () {
+    infoTag.style.opacity = '1'
+  }, 600)
+
   projectScroll.init()
   toggleInfo(infoTag)
   toggleInfo(closeTag)
@@ -51,7 +61,10 @@ window.addEventListener('load', () => {
     new Vimeo({ id, element })
   })
 
+  const cursorWidth = cursor.offsetWidth
+  const halfOfCursor = cursorWidth / 2
+
   document.addEventListener('mousemove', function (event) {
-    cursor.style.transform = `translate(${event.pageX - halfOfCursor}px, ${event.pageY + 10}px)`
+    cursor.style.transform = `translate(${event.pageX - halfOfCursor + 9}px, ${event.pageY + 30}px)`
   })
 })

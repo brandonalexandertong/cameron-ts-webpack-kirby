@@ -1,7 +1,5 @@
 <div class="project video" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
   <div class="o-ratio-16-9 visible">
-    <button class="prev"></button>
-    <button class="next"></button>
     <div class="vimeo-player" data-vimeo="<?= $project->vimeoId() ?>">
       <?php snippet('loader') ?>
         <div class="vimeo-player__ui">

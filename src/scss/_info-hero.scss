@@ -1,6 +1,7 @@
 .info-hero-section {
     max-width: 98vw;
     margin: 18px auto 0 auto;
+    
 
     .info-container {
         background-color: var(--color-white);
@@ -58,7 +59,6 @@
             .close-tag {
                 grid-column: 10;
                 text-align: right;
-                cursor: var(--cursor-type);
                 height: fit-content;
             }
               
@@ -72,19 +72,24 @@
     top: 8px;
     z-index: 1;
     left: 1%;
+    opacity: 0;
 }
 
 .tidball-tag-mobile {
     display: none;
 }
 
-.info-tag {
-    width: 4.25%;
+
+.info-button {
     position: absolute;
     top: 12px;
     left: 23.3%;
+    width: 4.25%;
     z-index: 5;
-    cursor: var(--cursor-type);
+}
+
+.info-tag {
+    opacity: 0;
 }
     
       

@@ -11,13 +11,6 @@ export default function newCursor (project) {
   const nextButton = project.querySelector('.next')
   const prevButton = project.querySelector('.prev')
 
-  function customCursor (element) {
-    element.style.cursor = 'url(assets/icons/triangle.svg), auto'
-  }
-
-  customCursor(prevButton)
-  customCursor(nextButton)
-
   project.addEventListener('mouseenter', function () {
     cursor.style.opacity = '1'
     cursorTop.innerHTML = projectName
@@ -35,7 +28,7 @@ export default function newCursor (project) {
     }
   })
   project.addEventListener('mouseleave', function (e) {
-    cursor.style.opacity = '0'
+    // cursor.style.opacity = '0'
     leftArrow.style.display = 'none'
     rightArrow.style.display = 'none'
   })

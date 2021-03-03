@@ -10,5 +10,5 @@ export default function addSelected (array) {
 
     i = (i + 1) % array.length
     lazySizes.loader.unveil(array[(i + 1) % array.length])
-  }, 5000)
+  }, 7000)
 }

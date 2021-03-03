@@ -56,6 +56,9 @@
 
 <img class="hero-tag tidball-tag-desktop" alt="Desktop Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_desktop.svg">
 <img class="hero-tag tidball-tag-mobile" alt="Mobile Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_mobile.svg">
-<button>
+<button class="info-button info tag">
   <img class="info-tag" alt="Info Button" src="assets/logos/Info_CJ-TS.svg"> 
+  <!-- <p>(</p>
+  <p>info</p>
+  <p>)</p> -->
 </button>

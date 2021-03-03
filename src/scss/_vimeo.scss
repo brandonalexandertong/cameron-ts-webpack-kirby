@@ -104,7 +104,9 @@
     button, &__seek {
         margin: 0 6px;
         padding: 0;
-        cursor: var(--cursor-type);
+        // cursor: var(--cursor-type);
+
+        
     }
 
     iframe {

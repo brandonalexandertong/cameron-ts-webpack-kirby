@@ -3,15 +3,22 @@
 }
 
 #cursor {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-    display: flex;
     opacity: 0;
+    width: 400px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#cursor-centered {
+    display: flex;
     text-align: center;
     flex-wrap: nowrap;
     flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
 
     .cursor-bottom-row img {
         max-height: 15px;
@@ -30,6 +37,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    justify-content: center;
 }
 
 .cursor-parentheses {
@@ -48,6 +56,7 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-shrink: 0;
+    justify-content: center;
 }
 
 .mobile-cursor {
