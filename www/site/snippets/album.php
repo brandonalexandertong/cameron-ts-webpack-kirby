@@ -40,9 +40,9 @@
   <img 
     alt ="Blurry background image for design"
     class="blurred-image" 
-    width="<?= $picture->resize(400, 400)->width() ?>" 
-    height="<?= $picture->resize(400, 400)->height() ?>" 
-    src="<?= $firstPicture->resize(400, 400)->url() ?>"
+    width="<?= $picture->resize(100, 100)->width() ?>" 
+    height="<?= $picture->resize(100, 100)->height() ?>" 
+    src="<?= $firstPicture->resize(100, 100)->url() ?>"
   >
 <?php endif ?>
 </div>

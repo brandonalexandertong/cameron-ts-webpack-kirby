@@ -9,6 +9,7 @@ export default function imageHover (project) {
       button.style.zIndex = 4
     })
   })
+  
   project.addEventListener('mouseleave', function () {
     visibleImages.forEach(image => {
       image.style.zIndex = 0

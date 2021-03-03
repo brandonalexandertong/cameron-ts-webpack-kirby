@@ -6,7 +6,7 @@ import {
 class Vimeo {
   constructor ({
     id, element, options = {
-      autoplay: true,
+      autoplay: false,
       muted: true,
       loop: true,
       controls: false

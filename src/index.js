@@ -5,19 +5,15 @@ import Scroll from './js/vertical-scroll.js'
 import Vimeo from './js/vimeo.js'
 import Background from './js/background.js'
 import UpdateCursor from './js/cursor.js'
-import Hover from './js/hover.js'
 
 const scrollContainer = document.querySelector('.projects-section')
-const backgroundSection = document.querySelector('.bg-img-section')
 const bgImageArray = document.querySelectorAll('.bg-img')
-const bgImageContainer = document.querySelector('.bg-img-section')
 
 window.addEventListener('load', () => {
   const albums = document.querySelectorAll('.album')
   const projects = document.querySelectorAll('.project')
   albums.forEach(project => {
     Slideshow(project, '.visible-image')
-    // Hover(project)
   })
 
   projects.forEach(project => {
@@ -33,32 +29,12 @@ window.addEventListener('load', () => {
   })
 })
 
-function blurBackground () {
-  const scrollDistance = scrollContainer.scrollLeft
-  const viewportWidth = window.innerWidth
-
-  if (scrollDistance > viewportWidth) {
-    bgImageContainer.classList.add('blur-background')
-  } else {
-    bgImageContainer.classList.remove('blur-background')
-  }
-}
-
-scrollContainer.addEventListener('wheel', blurBackground)
-
-// window.addEventListener('click', slideIn, {
-//   once: true
-// })
-
-window.addEventListener('touchmove', blurBackground)
+const cursor = document.getElementById('cursor');
+const cursorWidth = cursor.offsetWidth;
+const halfOfCursor = cursorWidth / 2;
 
 document.addEventListener('mousemove', function (event) {
-  const cursor = document.getElementById('cursor')
-  const cursorWidth = cursor.offsetWidth
-  const halfOfCursor = cursorWidth / 2
-  const mouseX = event.pageX
-  const mouseY = event.pageY
-  cursor.style.transform = `translate(${mouseX - halfOfCursor}px, ${mouseY + 10}px)`
+  cursor.style.transform = `translate(${event.pageX - halfOfCursor}px, ${event.pageY + 10}px)`
 })
 
 const projectScroll = new Scroll(scrollContainer)
