@@ -44,7 +44,8 @@ columns:
         label: Vimeo ID
         type: text
         help: Type Vimeo ID as it appears in hyperlink
-      Alternate:
-        label: Alternative Text
+      shadowColor:
+        label: Shadow Color
         type: text
-        help: Description of video for screen readers
+        editableAlpha: true
+        help: Color of the project drop shadow

@@ -4,21 +4,16 @@
     --font-size-body: 12px;
 }
 
-html {
+body {
+    line-height: 95%;
     font-family: var(--font-family-sans);
     color: var(--color-text);
     font-size: var(--font-size-body);
-    line-height: 95%;
     letter-spacing: .3px;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  body {
-      line-height: 95%;
-  }
-
-  
 h3 {
     font-size: 10px;
     font-family: var(--font-family-sans);

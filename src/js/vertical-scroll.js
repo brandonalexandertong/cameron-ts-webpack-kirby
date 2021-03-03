@@ -7,13 +7,13 @@ export default class Scroll {
 
   init () {
     const bgImageContainer = document.querySelector('.bg-img-section')
-  
-    let viewportWidth;
-    
-    function blurBackground(container) {
+
+    let viewportWidth
+
+    function blurBackground (container) {
       const scrollDistance = container.scrollLeft
       viewportWidth = window.innerWidth
-      
+
       if (scrollDistance > viewportWidth) {
         bgImageContainer.classList.add('blur-background')
       } else {
@@ -24,15 +24,15 @@ export default class Scroll {
     window.addEventListener('resize', () => {
       viewportWidth = window.innerWidth
     })
-    
+
     window.addEventListener('touchmove', () => {
-      blurBackground(this.container);
+      blurBackground(this.container)
     })
 
     this.container.addEventListener('wheel', event => {
       blurBackground(this.container)
       this.replace(event)
-    });
+    })
   }
 
   replace (event) {
@@ -40,14 +40,14 @@ export default class Scroll {
       const deltaY = event.deltaY
       const currScrollLeft = this.container.scrollLeft
 
-      if (deltaY != 0) {
+      if (deltaY !== 0) {
         this.container.scrollLeft = currScrollLeft + event.deltaY
       }
     }
 
     debounce(replaceVerticalScrollByHorizontal(event))
 
-    if (event.deltaY != 0) {
+    if (event.deltaY !== 0) {
       event.preventDefault()
     }
   }

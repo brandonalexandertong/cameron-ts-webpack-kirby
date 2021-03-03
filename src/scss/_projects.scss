@@ -3,11 +3,6 @@
     --blur-amount: 70px;
 }
 
-.--hide-right {
-  transform: translateX(100vw);
-  opacity: 0;
-}
-
 .projects-section {
     position: absolute;
     width: 100%;
@@ -18,7 +13,6 @@
     bottom: 0;
     left: 0;
     scrollbar-width: 0px;
-    transition: transform 500ms ease-out;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -33,9 +27,14 @@
         padding: 22px 1vw;
         margin: 0 0 0 100vw;
 
+        .visible {
+            position: relative;
+            overflow: auto;
+            border-radius: 30px;
+        }
+
         .project:last-child {
             margin: 0 0 0 8px;
-            padding-right: 1vw;
         }
 
         .project:first-child {
@@ -46,7 +45,7 @@
             margin: 0 8px;
             position: relative;
 
-            .prev {
+            .prev, .next {
                 height: 100%;
                 width: 50%;
                 position: absolute;
@@ -55,37 +54,40 @@
             }
               
             .next {
-                height: 100%;
-                width: 50%;
-                position: absolute;
                 right: 0;
-                z-index: 2;
-
             }
         }
         
         .album img.mobile-cursor-parentheses {
             display: block;
         }
+
         .album img {
             position: relative;
             max-width: unset;
             height: var(--project-height);
-            // object-fit: cover;
-            // remove
             z-index: -1;
             display: none;
-            border-radius: 30px;
             width: auto;
         }
           
           .album .blurred-image {
-            filter: blur(var(--blur-amount));
+            // filter: blur(var(--blur-amount));
             position: absolute;
             top: 0;
             display: block;
             z-index: -2;
-        }      
+        }    
+        
+        .project-halo {
+            width: 100%;
+            height: 99%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            border-radius: 30px;
+        }
     }
     .projects-container::-webkit-scrollbar {
         display: none;  /* Safari and Chrome */

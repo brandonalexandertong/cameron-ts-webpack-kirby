@@ -1,6 +1,6 @@
 
 <div class="album project" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
-<div class="visible-images">
+<div class="visible">
   <div class = "mobile-cursor">
     <img src="assets/images/(-white.svg" alt="Left Parentheses" class="mobile-cursor-parentheses cursor-parentheses-left">
     <div class="cursor-copy-container">
@@ -14,10 +14,9 @@
     <img src="assets/images/)-white.svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
   </div>
 
-  <button class="prev">
-  </button>
-  <button class="next">
-  </button>
+  <button class="prev"></button>
+  <button class="next"></button>
+
 <?php 
   foreach ($project->images() as $picture) : 
   $widthInVHBig = ($picture->width() / $picture->height()) * 88;
@@ -36,7 +35,7 @@
   endforeach 
 ?>
 </div>
-<?php if ($firstPicture = $project->image()) : ?>
+<!-- <?php if ($firstPicture = $project->image()) : ?>
   <img 
     alt ="Blurry background image for design"
     class="blurred-image" 
@@ -44,5 +43,6 @@
     height="<?= $picture->resize(100, 100)->height() ?>" 
     src="<?= $firstPicture->resize(100, 100)->url() ?>"
   >
-<?php endif ?>
+<?php endif ?> -->
+  <div class="project-halo" style="box-shadow: 0 0 70px <?= $project->shadowColor() ?>;"></div>
 </div>

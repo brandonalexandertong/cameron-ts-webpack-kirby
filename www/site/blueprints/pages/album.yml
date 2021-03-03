@@ -37,6 +37,11 @@ columns:
         type: text
         help: Second line of your mouse icon text
         placeholder: Season 3
+      shadowColor:
+        label: Shadow Color
+        type: text
+        editableAlpha: true
+        help: Color of the project drop shadow
 
   - width: 2/3
     sections:
