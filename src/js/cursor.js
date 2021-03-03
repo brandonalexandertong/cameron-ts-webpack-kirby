@@ -8,14 +8,16 @@ export default function newCursor (project) {
   const rightArrow = document.querySelector('.right-arrow')
   const leftArrow = document.querySelector('.left-arrow')
   const projectImages = project.querySelectorAll('.visible-image')
+  const nextButton = project.querySelector('.next')
+  const prevButton = project.querySelector('.prev')
 
   project.style.cursor = 'url(assets/icons/triangle.svg), auto'
   project.addEventListener('mouseenter', function () {
     cursor.style.opacity = '1'
     cursorTop.innerHTML = projectName
     cursorBottom.innerHTML = projectInfo
-    const nextButton = project.querySelector('.next')
-    const prevButton = project.querySelector('.prev')
+    prevButton.style.zIndex = 3
+    nextButton.style.zIndex = 3
     projectImages.forEach(image => {
       image.style.zIndex = 2
     })
@@ -35,6 +37,8 @@ export default function newCursor (project) {
     cursor.style.opacity = '0'
     leftArrow.style.display = 'none'
     rightArrow.style.display = 'none'
+    prevButton.style.zIndex = 3
+    nextButton.style.zIndex = 3
     projectImages.forEach(image => {
       image.style.zIndex = 0
     })
