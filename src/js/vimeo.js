@@ -1,15 +1,15 @@
 import Player from '@vimeo/player'
 import {
-  launchIntoFullscreen, exitFullscreen, iOS, isSafariDesktop,
+  launchIntoFullscreen, exitFullscreen, iOS, isSafariDesktop
 } from './utils'
 
 class Vimeo {
-  constructor({
+  constructor ({
     id, element, options = {
-      autoplay: false,
+      autoplay: true,
       muted: true,
       loop: true,
-      controls: false,
+      controls: false
     }
   }) {
     this.id = id
@@ -27,9 +27,9 @@ class Vimeo {
     }
 
     this.options = options
-    const mutedPreference = localStorage.getItem('vimeoMuted')
-    if (mutedPreference === 'true') this.options.muted = true
-    if (mutedPreference === 'false') this.options.muted = false
+    // const mutedPreference = localStorage.getItem('vimeoMuted')
+    // if (mutedPreference === 'true') this.options.muted = true
+    // if (mutedPreference === 'false') this.options.muted = false
 
     /* Enforce mute with IOS device */
     if (iOS === true) {
@@ -39,15 +39,14 @@ class Vimeo {
     this.init()
   }
 
-  ioCallback(entries, observer) {
+  ioCallback (entries, observer) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // console.log('is visible', entry.isIntersecting, this.el)
       }
     })
   }
 
-  async init() {
+  async init () {
     this.playBtn = this.el.querySelector('.vimeo-player__play')
     this.pauseBtn = this.el.querySelector('.vimeo-player__pause')
     this.mute = this.el.querySelector('.vimeo-player__mute')
@@ -62,7 +61,7 @@ class Vimeo {
     try {
       this.player = new Player(this.el, {
         id: this.id,
-        ...this.options,
+        ...this.options
       })
       this.isInit = true
       this.on()
@@ -118,7 +117,7 @@ class Vimeo {
     }
   }
 
-  on() {
+  on () {
     this.playHandler = () => {
       this.play()
       this.loader.classList.remove('clear')
@@ -147,7 +146,7 @@ class Vimeo {
     this.progress.addEventListener('click', this.progressClickHander)
   }
 
-  off() {
+  off () {
     this.playBtn.removeEventListener('click', this.playHandler)
     this.pauseBtn.removeEventListener('click', this.pauseHandler)
     this.mute.removeEventListener('click', this.muteHandler)
@@ -156,7 +155,7 @@ class Vimeo {
     this.maximize.addEventListener('click', this.toggleFullscreenHandler)
   }
 
-  toggleFullscreen() {
+  toggleFullscreen () {
     if (this.isFullscreen) {
       this.leaveFullscreen()
     } else {
@@ -164,7 +163,7 @@ class Vimeo {
     }
   }
 
-  async enterFullscreen() {
+  async enterFullscreen () {
     if (iOS || isSafariDesktop) {
       this.player.requestFullscreen().then(() => {
         // the player entered fullscreen
@@ -181,7 +180,7 @@ class Vimeo {
     document.onkeydown = () => { }
   }
 
-  leaveFullscreen() {
+  leaveFullscreen () {
     if (iOS || isSafariDesktop) {
       this.player.exitFullscreen().then(() => {
         // the player entered fullscreen
@@ -197,7 +196,7 @@ class Vimeo {
     document.onkeydown = this.previous
   }
 
-  async play() {
+  async play () {
     try {
       if (this.isPlaying === false) {
         this.playbackPromise = this.player.play()
@@ -207,7 +206,7 @@ class Vimeo {
     }
   }
 
-  async pause() {
+  async pause () {
     try {
       if (this.isPlaying === false) return
       await this.playbackPromise
@@ -217,7 +216,7 @@ class Vimeo {
     }
   }
 
-  goTo(percentage) {
+  goTo (percentage) {
     try {
       const time = (percentage / 100) * this.duration
       this.player.setCurrentTime(time)
@@ -227,7 +226,7 @@ class Vimeo {
     }
   }
 
-  resetHideTimer() {
+  resetHideTimer () {
     if (this.timer) clearTimeout(this.timer)
     if (!this.isPlaying) return
     this.timer = setTimeout(() => {
@@ -235,7 +234,7 @@ class Vimeo {
     }, 3500)
   }
 
-  async destroy() {
+  async destroy () {
     try {
       await this.pause()
       this.off()
@@ -249,7 +248,7 @@ class Vimeo {
     }
   }
 
-  async toggleMute() {
+  async toggleMute () {
     this.mute.classList.toggle('active')
     if (this.isMuted) {
       await this.player.setMuted(false)
@@ -262,7 +261,7 @@ class Vimeo {
     }
   }
 
-  async updateProgress(duration) {
+  async updateProgress (duration) {
     try {
       duration = Number(duration)
       const m = Math.floor((duration % 3600) / 60)
@@ -276,7 +275,7 @@ class Vimeo {
     }
   }
 
-  async getCurrentTime() {
+  async getCurrentTime () {
     try {
       if (this.isInit === false) return
       const time = await this.player.getCurrentTime()
@@ -286,11 +285,11 @@ class Vimeo {
     }
   }
 
-  trackProgress() {
+  trackProgress () {
     this.interval = setInterval(this.getCurrentTime.bind(this), 100)
   }
 
-  stopProgress() {
+  stopProgress () {
     clearInterval(this.interval)
   }
 }

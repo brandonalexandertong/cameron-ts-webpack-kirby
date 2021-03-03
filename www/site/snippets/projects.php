@@ -1,4 +1,4 @@
-<section class="projects-section --hide-right">
+<section class="projects-section">
   <div class="projects-container">
     <?php if ($projects = page('projects')) : ?>
       <?php foreach ($projects->children()->listed() as $project) : ?>

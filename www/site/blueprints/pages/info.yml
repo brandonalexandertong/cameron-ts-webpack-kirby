@@ -33,6 +33,9 @@ columns:
           email:
             label: Email
             type: email
+          emailAlt:
+            label: Alternate Email
+            type: email
           phone:
             label: Phone
             type: tel

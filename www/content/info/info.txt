@@ -39,7 +39,11 @@ Workscol1:
 
 ----
 
-Email: jtruax303@gmail.com
+Email: cameron@91rulez.online
+
+----
+
+Emailalt: jtruax303@gmail.com
 
 ----
 
@@ -55,6 +59,10 @@ Social:
 - 
   platform: instagram
   url: ""
+
+----
+
+Altemail: jtruax303@gmail.com
 
 ----
 

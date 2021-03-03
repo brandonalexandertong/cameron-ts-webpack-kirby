@@ -1,4 +1,4 @@
-import 'lazysizes';
+import 'lazysizes'
 
 import Slideshow from './js/album-array.js'
 import Scroll from './js/vertical-scroll.js'
@@ -10,6 +10,7 @@ import Hover from './js/hover.js'
 const scrollContainer = document.querySelector('.projects-section')
 const backgroundSection = document.querySelector('.bg-img-section')
 const bgImageArray = document.querySelectorAll('.bg-img')
+const bgImageContainer = document.querySelector('.bg-img-section')
 
 window.addEventListener('load', () => {
   const albums = document.querySelectorAll('.album')
@@ -32,24 +33,24 @@ window.addEventListener('load', () => {
   })
 })
 
-function slideIn () {
-  scrollContainer.classList.remove('--hide-right')
-  bgImageArray.forEach(image => {
-    image.classList.add('blur-background')
-  })
+function blurBackground () {
+  const scrollDistance = scrollContainer.scrollLeft
+  const viewportWidth = window.innerWidth
+
+  if (scrollDistance > viewportWidth) {
+    bgImageContainer.classList.add('blur-background')
+  } else {
+    bgImageContainer.classList.remove('blur-background')
+  }
 }
 
-window.addEventListener('wheel', slideIn, {
-  once: true
-})
+scrollContainer.addEventListener('wheel', blurBackground)
 
-window.addEventListener('click', slideIn, {
-  once: true
-})
+// window.addEventListener('click', slideIn, {
+//   once: true
+// })
 
-window.addEventListener('touchmove', slideIn, {
-  once: true
-})
+window.addEventListener('touchmove', blurBackground)
 
 document.addEventListener('mousemove', function (event) {
   const cursor = document.getElementById('cursor')

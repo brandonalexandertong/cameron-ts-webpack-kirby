@@ -20,12 +20,25 @@
 
         <h3 class="contact-tag info-content">Contact</h3>
         <ul class="contact-list info-content">
-          <li>
-            <?= html::email($infoPage->email()) ?>
-          </li>
-          <li>
-            <?= html::tel($infoPage->phone()) ?>
-          </li>
+
+         <?php if ($infoPage->email()->isNotEmpty()) : ?>
+            <li>
+              <?= html::email($infoPage->email()) ?>
+            </li>
+          <?php endif ?>
+
+          <?php if ($infoPage->emailAlt()->isNotEmpty()) : ?>
+            <li>
+              <?= html::email($infoPage->emailAlt()) ?>
+            </li>
+          <?php endif ?>
+
+          <?php if ($infoPage->phone()->isNotEmpty()) : ?>
+            <li>
+              <?= html::tel($infoPage->phone()) ?>
+            </li>
+          <?php endif ?>
+
           <?php
           $socialLinks = $infoPage->social()->toStructure();
           foreach ($socialLinks as $link) : ?>

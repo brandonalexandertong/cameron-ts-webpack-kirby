@@ -18,12 +18,11 @@
           height: 100%;
           object-fit: cover;
           z-index: -1;
-          display: none;
+          opacity: 0;
         }
     
         .selected {
             opacity: 1;
-            display: block;
         }
     }
 }
