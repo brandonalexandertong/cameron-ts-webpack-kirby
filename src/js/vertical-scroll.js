@@ -7,32 +7,20 @@ export default class Scroll {
 
   init () {
     const bgImageContainer = document.querySelector('.bg-img-section')
-    const projectsSection = document.querySelector('.projects-section')
     const bodyTag = document.querySelector('body')
-    let viewportWidth
+    let viewportWidth = window.innerWidth
 
-    function clickAnimate (container) {
-      if (container.scrollLeft === 0) {
-        container.scrollLeft += window.innerWidth
-      }
-      container.style.scrollBehavior = 'unset'
-      projectsSection.removeEventListener('click', clickAnimate)
+    function removeArrow () {
+      bodyTag.style.cursor = 'unset'
     }
 
-    projectsSection.addEventListener('click', () => {
-      console.log('hello')
-      clickAnimate(this.container)
-    })
-
     function blurBackground (container) {
-      const scrollDistance = container.scrollLeft
-      viewportWidth = window.innerWidth
       let blurAmount = 0
-      if (scrollDistance > viewportWidth * 2 / 3) {
+      if (container.scrollLeft > viewportWidth * 2 / 3) {
         blurAmount = 3
-      } else if (scrollDistance > viewportWidth / 3) {
+      } else if (container.scrollLeft > viewportWidth / 3) {
         blurAmount = 1
-        bodyTag.style.cursor = 'unset'
+        removeArrow()
       }
       bgImageContainer.style.filter = `blur(${blurAmount}px)`
     }
@@ -50,7 +38,6 @@ export default class Scroll {
     })
 
     this.container.addEventListener('wheel', event => {
-      this.container.style.scrollBehavior = 'unset'
       blurBackground(this.container)
       this.replace(event)
     })
