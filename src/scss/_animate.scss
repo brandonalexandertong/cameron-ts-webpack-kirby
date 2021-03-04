@@ -32,8 +32,8 @@
 .info-hero-section {
   transition: transform .5s ease;
 }
-  
-button:hover, a:hover {
+
+.info-tag:hover, a:hover, .close-tag:hover, .video button:hover {
+  cursor: pointer;
   font-style: italic;
-  cursor: inherit;
 }
