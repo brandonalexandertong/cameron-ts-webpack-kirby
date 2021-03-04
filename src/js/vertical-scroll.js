@@ -28,7 +28,13 @@ export default class Scroll {
       viewportWidth = window.innerWidth
     })
 
-    window.addEventListener('touchmove', () => {
+    window.addEventListener('touchmove', (event) => {
+      console.log(event)
+      blurBackground(this.container)
+    })
+
+    window.addEventListener('touchend', (event) => {
+      console.log(event)
       blurBackground(this.container)
     })
 

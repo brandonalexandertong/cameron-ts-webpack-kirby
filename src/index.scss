@@ -50,6 +50,8 @@ body {
   width: 100%;
   overscroll-behavior-x: none;
   position: relative;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 li {

@@ -15,6 +15,7 @@ const infoTag = document.querySelector('.info-tag')
 const infoHeroSection = document.querySelector('.info-hero-section')
 const infoContainer = document.querySelector('.info-container')
 const heroTag = document.querySelector('.hero-tag')
+const heroTagMobile = document.querySelector('.tidball-tag-mobile')
 const closeTag = document.querySelector('.close-tag')
 
 const slideFunction = function () {
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
   // bgImageSection.style.opacity = '1'
   setTimeout(function () {
     heroTag.style.opacity = '1'
+    heroTagMobile.style.opacity = '1'
   }, 300)
   setTimeout(function () {
     infoTag.style.opacity = '1'
