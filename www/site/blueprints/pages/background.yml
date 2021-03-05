@@ -10,5 +10,4 @@ sections:
     type: files
     template: image
     layout: cards
-    min: 10
     max: 10
