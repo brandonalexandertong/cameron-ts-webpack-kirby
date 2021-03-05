@@ -1,17 +1,3 @@
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('fonts/MaisonNeueWEB-Bold.woff2') format('woff2'),
-       url('fonts/MaisonNeueWEB-Bold.woff') format('woff');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('fonts/MaisonNeueWEB-Book.woff2') format('woff2'),
-       url('fonts/MaisonNeueWEB-Book.woff') format('woff');
-  font-weight: normal;
-}
-
 @import "./scss/base";
 @import "./scss/fonts";
 @import "./scss/vimeo";
