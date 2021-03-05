@@ -4,7 +4,7 @@
     <div class="cursor-copy-container">
       <p class="cursor-top">Couch Prints</p>
       <div class = "cursor-bottom-row">
-        <img class = "left-arrow lazyload" alt="Left Arrow Desktop Cursor" src="assets/icons/Cam_Arrow_Black_left.png">
+        <img class = "left-arrow lazyload" alt="Left Arrow Desktop Cursor" src="assets/icons/Cam_Arrow_Black_Left.png">
         <p class="cursor-bottom">Notion Magazine</p>
         <img class = "right-arrow lazyload" alt="Right Arrow Desktop Cursor" src="assets/icons/Cam_Arrow_Black_Right.png">
       </div>  
