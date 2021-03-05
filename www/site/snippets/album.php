@@ -6,7 +6,7 @@
     <div class="cursor-copy-container">
       <p class="cursor-top"><?= $project->projectName() ?></p>
       <div class = "cursor-bottom-row">
-        <img class = "left-arrow lazyload" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_left.png">
+        <img class = "left-arrow lazyload" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_Left.png">
         <p class="cursor-bottom"><?= $project->projectInfo() ?></p>
         <img class = "right-arrow lazyload" alt="Right Arrow Icon" src="assets/icons/Cam_Arrow_White_Right.png">
       </div>
