@@ -5,6 +5,10 @@
 return [
   'debug' => false,
 
+  'panel' =>[
+    'install' => true
+  ],
+
   'thumbs' => [
     'srcsets' => [
       'image' => [
