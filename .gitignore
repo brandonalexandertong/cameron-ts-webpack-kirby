@@ -2,6 +2,7 @@
 # By default, git ignores all content from sub-pages folders
 # Comment the line below if you want git to handle all your content
 www/content/*/*/*
+www/content/background/*
 
 www/media/*
 !www/media/index.html
