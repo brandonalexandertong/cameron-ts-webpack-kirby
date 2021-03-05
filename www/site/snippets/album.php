@@ -6,9 +6,9 @@
     <div class="cursor-copy-container">
       <p class="cursor-top"><?= $project->projectName() ?></p>
       <div class = "cursor-bottom-row">
-        <img class = "left-arrow" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_left.png">
+        <img class = "left-arrow lazyload" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_left.png">
         <p class="cursor-bottom"><?= $project->projectInfo() ?></p>
-        <img class = "right-arrow" alt="Right Arrow Icon" src="assets/icons/Cam_Arrow_White_Right.png">
+        <img class = "right-arrow lazyload" alt="Right Arrow Icon" src="assets/icons/Cam_Arrow_White_Right.png">
       </div>
     </div>
     <img src="assets/images/)-white.svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
