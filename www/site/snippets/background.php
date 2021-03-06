@@ -9,12 +9,12 @@
             alt="<?= $bgimage->alt() ?>"
             class="bg-img" 
             srcset="<?= $bgimage->srcset('image') ?>"
-            src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+            src="<?= $bgimage->resize(2700, 2700)->url() ?>"
           <?php else: ?>
             alt="<?= $bgimage->alt() ?>"
             class="bg-img lazyload" 
             data-srcset="<?= $bgimage->srcset('image') ?>"
-            data-src="<?= $bgimage->resize(2000, 2000)->url() ?>"
+            data-src="<?= $bgimage->resize(2700, 2700)->url() ?>"
           <?php endif; ?>
         >
       </div>
