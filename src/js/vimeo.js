@@ -7,7 +7,7 @@ class Vimeo {
   constructor ({
     id, element, options = {
       autoplay: false,
-      muted: true,
+      muted: false,
       loop: true,
       controls: false
     }

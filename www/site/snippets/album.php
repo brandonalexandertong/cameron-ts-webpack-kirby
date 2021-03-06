@@ -2,16 +2,16 @@
 <div class="album project" data-project="<?= $project->projectName() ?>" data-info="<?= $project->projectInfo() ?>">
   <div class="visible">
     <div class = "mobile-cursor">
-      <img src="assets/images/(-white.svg" alt="Left Parentheses" class="mobile-cursor-parentheses cursor-parentheses-left">
+      <img src="assets/images/(.svg" alt="Left Parentheses" class="mobile-cursor-parentheses cursor-parentheses-left">
       <div class="cursor-copy-container">
         <p class="cursor-top"><?= $project->projectName() ?></p>
         <div class = "cursor-bottom-row">
-          <img class = "left-arrow lazyload" alt="Left Arrow Icon" src="assets/icons/Cam_Arrow_White_Left.png">
+          <img class = "left-arrow lazyload" alt="Left Arrow Icon" src="assets/icons/arrow-left.svg">
           <p class="cursor-bottom"><?= $project->projectInfo() ?></p>
-          <img class = "right-arrow lazyload" alt="Right Arrow Icon" src="assets/icons/Cam_Arrow_White_Right.png">
+          <img class = "right-arrow lazyload" alt="Right Arrow Icon" src="assets/icons/arrow-right.svg">
         </div>
       </div>
-      <img src="assets/images/)-white.svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
+      <img src="assets/images/).svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
     </div>
 
     <button class="prev"></button>
