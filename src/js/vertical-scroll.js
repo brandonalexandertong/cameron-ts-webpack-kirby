@@ -16,9 +16,12 @@ export default class Scroll {
 
     function blurBackground (container) {
       let blurAmount = 0
-      if (container.scrollLeft > viewportWidth * 2 / 3) {
+      if (container.scrollLeft > viewportWidth * 4 / 6) {
         blurAmount = 4
-      } else if (container.scrollLeft > viewportWidth / 3) {
+      } else if (container.scrollLeft > viewportWidth * 3 / 6) {
+        blurAmount = 2
+        removeArrow()
+      } else if (container.scrollLeft > viewportWidth * 2 / 6) {
         blurAmount = 1
         removeArrow()
       }
