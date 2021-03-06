@@ -37,9 +37,6 @@ window.addEventListener('load', () => {
     Slideshow(project, '.visible-image')
   })
 
-  body.style.cursor = 'url(assets/icons/Cam_Arrow_Black_Left.png) 0 50, auto'
-
-  // bgImageSection.style.opacity = '1'
   setTimeout(function () {
     heroTag.style.opacity = '1'
     heroTagMobile.style.opacity = '1'

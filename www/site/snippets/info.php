@@ -59,3 +59,7 @@
 <button class="info-tag">
   <img class="info-button" alt="Info Button" src="assets/logos/Info_CJ-TS.svg"> 
 </button>
+
+<div class="scroll-tag-container">
+  <img id="scroll-tag" alt="Image telling user to scroll" src="assets/images/scroll.svg">
+</div>

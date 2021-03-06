@@ -95,8 +95,34 @@
     width: 4.25%;
     z-index: 5;
 }
+
+@keyframes float {
+	0% {
+		transform: translatex(0px);
+	}
+	50% {
+		transform: translatex(-5px);
+	}
+	100% {
+		transform: translatex(0px);
+	}
+}
     
+.scroll-tag-container {
+    display: flex;
+    position: absolute;
+    right: 1vw;
+    height: 100vh;
+    top: 0;
+    align-items: center;
+}
       
+#scroll-tag {
+    height: 10%;
+    transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+    z-index: -1;
+}
       
     
       

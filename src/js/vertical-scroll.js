@@ -9,9 +9,10 @@ export default class Scroll {
     const bgImageContainer = document.querySelector('.bg-img-section')
     const bodyTag = document.querySelector('body')
     let viewportWidth = window.innerWidth
+    const scrollTag = document.getElementById('scroll-tag')
 
-    function removeArrow () {
-      bodyTag.style.cursor = 'unset'
+    function removeScroll () {
+      scrollTag.style.display = 'none'
     }
 
     function blurBackground (container) {
@@ -20,10 +21,9 @@ export default class Scroll {
         blurAmount = 4
       } else if (container.scrollLeft > viewportWidth * 3 / 6) {
         blurAmount = 2
-        removeArrow()
       } else if (container.scrollLeft > viewportWidth * 2 / 6) {
         blurAmount = 1
-        removeArrow()
+        removeScroll()
       }
       bgImageContainer.style.filter = `blur(${blurAmount}px)`
     }
