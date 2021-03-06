@@ -11,7 +11,7 @@
             <img class = "mute-on" src="assets/icons/volume_off.svg" alt="Mute">
           </button>
           <button class="vimeo-player__maximize icon">
-            <img src="assets/icons/fullscreen.png" alt="Maximize">
+            <img src="assets/icons/fullscreen.svg" alt="Maximize">
           </button>
       </div>
       <div class="vimeo-player__progress"></div>
