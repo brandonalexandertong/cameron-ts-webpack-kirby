@@ -25,7 +25,7 @@
   transition: opacity 1.2s ease-in;
 }
 
-.info-tag, .hero-tag, .info-container, .info-button {
+.info-tag, .hero-tag, .info-container {
   transition: opacity .25s ease-in, transform .5s ease;;
 }
 
@@ -36,4 +36,12 @@
 .info-tag:hover, a:hover, .close-tag:hover, .video button:hover {
   cursor: pointer;
   font-style: italic;
+}
+
+.info-button:hover {
+  transform: scale(1.1);
+}
+
+.info-button {
+  transition: transform .15s ease;
 }
