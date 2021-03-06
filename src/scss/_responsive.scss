@@ -118,7 +118,7 @@
 
 @media (max-width: 600px) {
     :root {
-        --project-height: 70vh;
+        --project-height: auto;
         --font-size-body: 10px;
     }
 
@@ -137,6 +137,20 @@
     
         .projects-container {
             padding: 6vh 1vw;
+            
+            .project {
+                height: 100%;
+
+                .visible-image {
+                    width: 90vw;
+                }
+
+                .o-ratio-16-9 {
+                    width: 90vw;
+                    height: calc( 90vw * .5625 );
+                }
+                
+            }
         }
     }
     .info-tag {
