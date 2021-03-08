@@ -12,6 +12,10 @@
                 grid-column-gap: 12px;
                 grid-template-rows: 10px auto;
 
+                .credits {
+                    font-size: 7px;
+                }
+
                 h3 {
                     font-size: 9px;
                 }
@@ -52,6 +56,12 @@
                 grid-template-columns: (24px) fit-content(220px) 0px fit-content(90px) fit-content(230px) 0px fit-content(24px) fit-content(48px) auto fit-content(24px);
                 grid-column-gap: 10px;
                 grid-template-rows: 8px auto;
+
+                .credits {
+                    font-size: 6px;
+                    bottom: 6px;
+                }
+
                 h3 {
                     font-size: 7px;
                 }
@@ -91,6 +101,12 @@
                 grid-template-columns: (24px) fit-content(220px) 0px fit-content(90px) fit-content(230px) 0px fit-content(24px) fit-content(48px) auto fit-content(24px);
                 grid-column-gap: 8px;
                 grid-template-rows: 6px auto;
+
+                .credits {
+                    font-size: 5px;
+                    bottom: 4px;
+                }
+
                 h3 {
                     font-size: 7px;
                 }
@@ -192,6 +208,14 @@
                 flex-wrap: wrap;
                 margin: 30px 8px;
                 height: auto;
+
+                .credits {
+                    width: 100%;
+                    justify-content: center;
+                    right: 0;
+                    font-size: 8px;
+                    bottom: 8px;
+                }
 
                 .about-copy {
                     width: 85%;

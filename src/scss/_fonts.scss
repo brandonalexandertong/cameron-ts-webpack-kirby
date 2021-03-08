@@ -24,6 +24,12 @@ h3 {
     line-height: 1;
 }
 
+h4 {
+    margin-right: 2px;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
 a {
     color: currentColor;
     text-decoration: none;
@@ -52,4 +58,8 @@ button {
 
 .info-tag {
     line-height: 0;
+}
+
+.credits a {
+    text-decoration: underline;
 }

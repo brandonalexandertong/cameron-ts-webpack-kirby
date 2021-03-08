@@ -14,8 +14,8 @@
       <img src="assets/images/).svg" alt="Right Parentheses" class="mobile-cursor-parentheses cursor-parentheses-right">
     </div>
 
-    <button class="prev"></button>
-    <button class="next"></button>
+    <button class="prev" aria-label="Press to view previous image"></button>
+    <button class="next" aria-label="Press to view next image"></button>
 
   <?php 
     foreach ($project->images() as $picture) : 

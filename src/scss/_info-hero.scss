@@ -108,6 +108,23 @@
 		transform: translatex(0px);
 	}
 }
+
+.credits {
+    position: absolute;
+    display: flex;
+    bottom: 8px;
+    right: 42px;
+    font-size: 8px;
+
+    div {
+        display: flex;
+    }
+
+    .design {
+        margin-right: 8px;
+    }
+}
+
     
 .scroll-tag-container {
     display: flex;

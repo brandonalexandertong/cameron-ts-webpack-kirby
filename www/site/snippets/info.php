@@ -50,6 +50,16 @@
         <button class="close-tag info-content">Close</button>
         
       <?php endif ?>
+        <div class="credits">
+            <div class="design">
+              <h4>site design:</h4>
+              <a href="http://jacobtruax.info/" target="=_blank">jacob truax</a>
+            </div>
+            <div class="development">
+              <h4>development:</h4>
+              <a href="mailto:brandon.tong14@gmail.com" target="=_blank">brandon tong</a>
+            </div>
+        </div>
     </div>
   </div>
 </section>
@@ -57,7 +67,7 @@
 <img class="hero-tag tidball-tag-desktop" alt="Desktop Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_desktop.svg">
 <img class="hero-tag tidball-tag-mobile" alt="Mobile Logo Saying 'Cameron Tidball Sciullo'" src="assets/logos/Cameron+Tidball_mobile.svg">
 <button class="info-tag">
-  <img class="info-button" alt="Info Button" src="assets/logos/Info_CJ-TS.svg"> 
+  <img class="info-button" tabindex="0" alt="Info Button" src="assets/logos/Info_CJ-TS.svg"> 
 </button>
 
 <div class="scroll-tag-container">
