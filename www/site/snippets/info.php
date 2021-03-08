@@ -57,7 +57,7 @@
             </div>
             <div class="development">
               <h4>development:</h4>
-              <a href="mailto:brandon.tong14@gmail.com" target="=_blank">brandon tong</a>
+              <a href="https://brandontong.info/" target="=_blank">brandon tong</a>
             </div>
         </div>
     </div>
