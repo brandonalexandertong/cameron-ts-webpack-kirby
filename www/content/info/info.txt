@@ -9,6 +9,8 @@ About: Cameron Tidball-Sciullo is a photographer & director based in New York. H
 Workscol1:
 
 - 
+  project: Novembre
+- 
   project: Dior
 - 
   project: Nike
@@ -18,8 +20,6 @@ Workscol1:
   project: Apple Music
 - 
   project: Dazed Beauty
-- 
-  project: Novembre
 - 
   project: Office Magazine
 - 

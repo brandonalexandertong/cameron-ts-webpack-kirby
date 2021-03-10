@@ -18,7 +18,7 @@
     <button class="next" aria-label="Press to view next image"></button>
 
   <?php 
-    foreach ($project->images() as $picture) : 
+    foreach ($project->images()->sortBy('sort', 'filename') as $picture) : 
     $widthInVHBig = ($picture->width() / $picture->height()) * 88;
     $widthInVHSmall = ($picture->width() / $picture->height()) * 65;
   ?>
