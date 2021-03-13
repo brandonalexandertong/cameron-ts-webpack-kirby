@@ -2,34 +2,32 @@ Title: Info
 
 ----
 
-About: Cameron Tidball-Sciullo is a photographer & director based in New York. He is  1/2 of creative partnership 91 Rules.
+About: CAMERON TIDBALL-SCIULLO IS A PHOTOGRAPHER & DIRECTOR BASED IN NEW YORK. HE IS 1/2 OF CREATIVE PARTNERSHIP 91 RULES.
 
 ----
 
 Workscol1:
 
 - 
-  project: Novembre
-- 
   project: Dior
 - 
   project: Nike
 - 
-  project: GQ
-- 
   project: Apple Music
+- 
+  project: GQ
 - 
   project: Dazed Beauty
 - 
-  project: Office Magazine
-- 
   project: Fenti X Savage
+- 
+  project: Novembre
+- 
+  project: Office Magazine
 - 
   project: Paper
 - 
   project: Visionaire
-- 
-  project: Magazine
 - 
   project: Namilia
 - 
@@ -39,26 +37,23 @@ Workscol1:
 
 ----
 
-Email: cameron@91rulez.online
+Email: cameron@91rules.online
 
 ----
 
-Emailalt: jtruax303@gmail.com
+Emailalt: 
 
 ----
 
-Phone: 7202883339
+Phone: 
 
 ----
 
 Social:
 
 - 
-  platform: Facebook
-  url: https://facebook.com
-- 
   platform: instagram
-  url: ""
+  url: https://www.instagram.com/cj__ts/
 
 ----
 

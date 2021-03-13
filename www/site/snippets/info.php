@@ -5,7 +5,7 @@
       <h3 class="about-h3 info-content">About</h3>
       <?php if ($infoPage = page('info')) : ?>
         <p class="about-copy info-content"><?= $infoPage->about()->html() ?></p>
-        <h3 class="selected-works-tag info-content">Selected Clients</h3>
+        <h3 class="selected-works-tag info-content">Selected Works</h3>
         <div class="selected-works-container info-content">
           <ul class="selected-works">
 

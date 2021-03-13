@@ -5,10 +5,8 @@ import Vimeo from './js/vimeo.js'
 import Background from './js/background.js'
 import UpdateCursor from './js/cursor.js'
 
-const body = document.querySelector('body')
 const scrollContainer = document.querySelector('.projects-section')
 const bgImageArray = document.querySelectorAll('.bg-img')
-const bgImageSection = document.querySelector('.bg-img-section')
 const cursor = document.getElementById('cursor')
 const projectScroll = new Scroll(scrollContainer)
 const infoTag = document.querySelector('.info-tag')
@@ -60,7 +58,7 @@ window.addEventListener('load', () => {
   setTimeout(function () {
     scrollTag.style.opacity = '1'
     heroTagMobile.style.opacity = '1'
-  }, 3500)
+  }, 6000)
 
   toggleInfo(infoTag)
   toggleInfo(closeTag)
