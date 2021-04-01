@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
   setTimeout(function () {
     scrollTag.style.opacity = '1'
     heroTagMobile.style.opacity = '1'
-  }, 6000)
+  }, 3500)
 
   toggleInfo(infoTag)
   toggleInfo(closeTag)
