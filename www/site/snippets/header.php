@@ -18,13 +18,13 @@
        url('assets/fonts/MaisonNeueWEB-Bold.woff') format('woff');
   font-weight: 700;
 }
-@font-face {
-  font-family: 'Maison Neue';
-  src: url('assets/fonts/MaisonNeueWEB-Book.woff2') format('woff2'),
-       url('assets/fonts/MaisonNeueWEB-Book.woff') format('woff');
-  font-weight: normal;
-}
-</style>
+  @font-face {
+    font-family: 'Maison Neue';
+    src: url('assets/fonts/MaisonNeueWEB-Book.woff2') format('woff2'),
+        url('assets/fonts/MaisonNeueWEB-Book.woff') format('woff');
+    font-weight: normal;
+  }
+  </style>
   <?= liveCSS('assets/builds/bundle.css') ?>
 </head>
 <body>

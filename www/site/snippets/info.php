@@ -5,7 +5,7 @@
       <h3 class="about-h3 info-content">About</h3>
       <?php if ($infoPage = page('info')) : ?>
         <p class="about-copy info-content"><?= $infoPage->about()->html() ?></p>
-        <h3 class="selected-works-tag info-content">Selected Works</h3>
+        <h3 class="selected-works-tag info-content">Selected Clients</h3>
         <div class="selected-works-container info-content">
           <ul class="selected-works">
 
@@ -50,16 +50,16 @@
         <button class="close-tag info-content">Close</button>
         
       <?php endif ?>
-        <div class="credits">
-            <div class="design">
-              <h4>site design:</h4>
-              <a href="http://jacobtruax.info/" target="=_blank">jacob truax</a>
-            </div>
-            <div class="development">
-              <h4>development:</h4>
-              <a href="https://brandontong.info/" target="=_blank">brandon tong</a>
-            </div>
-        </div>
+      <div class="credits">
+          <div class="design">
+            <h4>site design:</h4>
+            <a href="http://jacobtruax.info/" target="=_blank">jacob truax</a>
+          </div>
+          <div class="development">
+            <h4>development:</h4>
+            <a href="https://brandontong.info/" target="=_blank">brandon tong</a>
+          </div>
+      </div>
     </div>
   </div>
 </section>
