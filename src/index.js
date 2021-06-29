@@ -5,6 +5,8 @@ import Vimeo from './js/vimeo.js'
 import Background from './js/background.js'
 import UpdateCursor from './js/cursor.js'
 
+
+
 const scrollContainer = document.querySelector('.projects-section')
 const bgImageArray = document.querySelectorAll('.bg-img')
 const cursor = document.getElementById('cursor')
